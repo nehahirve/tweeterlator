@@ -6,6 +6,10 @@ body {
   background: $background;
 }
 
+main {
+  color: $accent;
+}
+
 a {
   text-decoration: none;
   color: $accent;
@@ -32,6 +36,15 @@ nav ul {
 
 
 
-main {
+button {
+  background: yellow;
+}
 
+.green {
+  background: green;
+}
+
+.graph {
+  height: 500px;
+  background-color: white;
 }
