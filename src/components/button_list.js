@@ -3,20 +3,30 @@ import ToggleableButton from "../components/toggleable_button"
 
 export default function ButtonList(props) {
   const [currentButton, setCurrentButton] = useState(null)
+
   function toggle(e) {
     let current = e.target.innerText
     setCurrentButton(current)
-    console.log(currentButton)
   }
 
-  const stations = props.stations.map(station => {
+  const stations = props.stations.map((station, index) => {
     if (currentButton === station) {
       return (
-        <ToggleableButton onClick={toggle} station={station} isOpen={true} />
+        <ToggleableButton
+          key={index}
+          onClick={toggle}
+          station={station}
+          isOpen={true}
+        />
       )
     } else {
       return (
-        <ToggleableButton onClick={toggle} station={station} isOpen={false} />
+        <ToggleableButton
+          key={index}
+          onClick={toggle}
+          station={station}
+          isOpen={false}
+        />
       )
     }
   })

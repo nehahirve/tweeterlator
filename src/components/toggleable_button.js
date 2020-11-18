@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { ResponsiveNetwork } from "@nivo/network"
+import Graph from "../components/graph"
 
 export default function ToggleableButton(props) {
   const data = {
