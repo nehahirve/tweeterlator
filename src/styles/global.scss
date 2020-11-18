@@ -1,4 +1,37 @@
-.headerbar {
-  height: 200px;
-  background: purple;
+$background: #000;
+$accent: white;
+
+
+body {
+  background: $background;
+}
+
+a {
+  text-decoration: none;
+  color: $accent;
+  font-family: 'Montserrat';
+}
+
+nav {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  li {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    
+  }
+}
+
+
+
+
+main {
+
 }

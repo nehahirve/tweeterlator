@@ -1,1 +1,1 @@
-.headerbar{height:200px;background:purple}
+body{background:#000}a{text-decoration:none;color:#fff;font-family:'Montserrat'}nav{height:5rem;display:flex;align-items:center;justify-content:space-around}nav ul{display:flex;justify-content:space-between}nav ul li{margin-left:3rem;margin-right:3rem}
