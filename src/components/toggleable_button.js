@@ -1483,15 +1483,17 @@ export default function ToggleableButton(props) {
   if (props.isOpen) {
     return (
       <>
-        <button className="green" onClick={props.onClick}>
-          {props.station}
-        </button>
+        <button
+          className="green"
+          onClick={props.onClick}
+          stationName={props.station}
+        ></button>
       </>
     )
   } else {
     return (
       <>
-        <button onClick={props.onClick}>{props.station}</button>
+        <button onClick={props.onClick} stationName={props.station}></button>
       </>
     )
   }

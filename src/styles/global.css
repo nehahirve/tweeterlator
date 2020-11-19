@@ -1,1 +1,64 @@
-body{background:#000}main{color:#fff}a{text-decoration:none;color:#fff;font-family:'Montserrat'}nav{height:5rem;display:flex;align-items:center;justify-content:space-around}nav ul{display:flex;justify-content:space-between}nav ul li{margin-left:3rem;margin-right:3rem}button{background:yellow}.green{background:green}.graph{height:500px;background-color:white}.background-map{height:calc(100vh - 5rem);display:flex;align-items:center;justify-content:center}.background-map img{height:90%}.background-map button{position:absolute}
+body {
+  background: #000;
+}
+
+main {
+  color: #29abe2;
+}
+
+a {
+  text-decoration: none;
+  color: #29abe2;
+  font-family: "Montserrat";
+}
+
+nav {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+button {
+  background: yellow;
+}
+
+.green {
+  background: green;
+}
+
+.graph {
+  height: 500px;
+  background-color: white;
+}
+
+.background-map {
+  height: calc(100vh - 5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-map img {
+  height: 90%;
+}
+
+.background-map button {
+  position: absolute;
+  background: #000;
+  padding: 0;
+  border: 1px solid #29abe2;
+  border-radius: 50%;
+  width: calc(1rem * 0.7);
+  height: calc(1rem * 0.7);
+}

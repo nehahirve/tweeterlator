@@ -1,6 +1,5 @@
 $background: #000;
-$accent: white;
-
+$accent: #29abe2;
 
 body {
   background: $background;
@@ -13,7 +12,7 @@ main {
 a {
   text-decoration: none;
   color: $accent;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 nav {
@@ -29,12 +28,8 @@ nav ul {
   li {
     margin-left: 3rem;
     margin-right: 3rem;
-    
   }
 }
-
-
-
 
 button {
   background: yellow;
@@ -50,7 +45,6 @@ button {
 }
 
 .background-map {
-  
   height: calc(100vh - 5rem);
   display: flex;
   align-items: center;
@@ -60,5 +54,11 @@ button {
   }
   button {
     position: absolute;
+    background: $background;
+    padding: 0;
+    border: 1px solid $accent;
+    border-radius: 50%;
+    width: calc(1rem * 0.7);
+    height: calc(1rem * 0.7);
   }
 }
