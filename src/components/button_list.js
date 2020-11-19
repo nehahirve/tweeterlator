@@ -5,7 +5,8 @@ export default function ButtonList(props) {
   const [currentButton, setCurrentButton] = useState(null)
 
   function toggle(e) {
-    let current = e.target.innerText
+    console.log(e.target.getAttribute("stationname"))
+    let current = e.target.getAttribute("stationname")
     setCurrentButton(current)
   }
 
