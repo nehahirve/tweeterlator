@@ -26,7 +26,7 @@ export default function ButtonList(props) {
         <ToggleableButton
           key={index}
           onClick={toggle}
-          station={station}
+          station={station.name}
           coordinates={station.pos}
           isOpen={false}
         />

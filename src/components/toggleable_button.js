@@ -2,18 +2,18 @@ import React, { useState } from "react"
 import Graph from "../components/graph"
 
 export default function ToggleableButton(props) {
+  console.log(props.station)
   if (props.isOpen) {
     return (
       <>
         <button
           style={{
-            left: `${props.station.pos.x}%`,
-            top: `${props.station.pos.y}%`,
-            padding: "10px",
+            left: `${props.coordinates.x}%`,
+            top: `${props.coordinates.y}%`,
           }}
           className="green"
           onClick={props.onClick}
-          stationName={props.station.name}
+          stationName={props.station}
         ></button>
       </>
     )
@@ -22,11 +22,11 @@ export default function ToggleableButton(props) {
       <>
         <button
           style={{
-            left: `${props.station.pos.x}%`,
-            top: `${props.station.pos.y}%`,
+            left: `${props.coordinates.x}%`,
+            top: `${props.coordinates.y}%`,
           }}
           onClick={props.onClick}
-          stationName={props.station.name}
+          stationName={props.station}
         ></button>
       </>
     )
