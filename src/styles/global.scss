@@ -9,6 +9,11 @@ main {
   color: $accent;
   display: flex;
   justify-content: center;
+  p{
+    font-family: "Montserrat";
+    font-size: x-large;
+    width: 60%;
+  }
 }
 
 a {

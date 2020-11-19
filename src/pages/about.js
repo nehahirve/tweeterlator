@@ -1484,10 +1484,21 @@ export default function About() {
   return (
     <>
       <Header />
-      <main className="content">
-        <div>About us</div>
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, culpa
+          eaque porro rerum voluptate, obcaecati sapiente cumque saepe sit
+          ratione architecto, enim ad repellat dolor quos quisquam quae
+          distinctio dolores!
+          <br />
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, culpa
+          eaque porro rerum voluptate, obcaecati sapiente cumque saepe sit
+          ratione architecto, enim ad repellat dolor quos quisquam quae
+          distinctio dolores!
+        </p>
       </main>
-      <div className="graph"></div>
     </>
   )
 }
