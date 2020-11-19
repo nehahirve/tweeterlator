@@ -10,12 +10,13 @@ export default function ButtonList(props) {
   }
 
   const stations = props.stations.map((station, index) => {
-    if (currentButton === station) {
+    if (currentButton === station.name) {
       return (
         <ToggleableButton
           key={index}
           onClick={toggle}
-          station={station}
+          station={station.name}
+          coordinates={station.pos}
           isOpen={true}
         />
       )
@@ -25,6 +26,7 @@ export default function ButtonList(props) {
           key={index}
           onClick={toggle}
           station={station}
+          coordinates={station.pos}
           isOpen={false}
         />
       )
