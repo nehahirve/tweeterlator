@@ -11,7 +11,8 @@ text =
 const chain = new Markov()
 chain.addCorpus(text)
 const graph = chain.export()
-console.log(graph)
+
+fs.writeFileSync("testdata.json", JSON.stringify(graph))
 
 //read in a text file
 //ingets it into markov
