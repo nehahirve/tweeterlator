@@ -17,6 +17,7 @@
     "@nivo/core": "^0.65.0",
     "@nivo/network": "^0.65.1",
     "@nivo/tooltip": "^0.65.1",
+    "ez-markov": "^1.2.1",
     "gatsby": "^2.25.3",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "node-fetch": "^2.6.1",
