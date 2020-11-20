@@ -10,7 +10,8 @@ const cities = [
   { name: "göteborg", lat: 57.650002, lon: 12.016667 },
 ]
 
-let maxId, url
+let maxId = 0
+let url
 
 let options = {
   method: "GET",
@@ -22,28 +23,30 @@ let options = {
   },
 }
 
-function getDataForAllCities(cities) {
+async function getDataForAllCities(cities) {
   for (let city of cities) {
     maxId = 0
-    let lat = city.lat
-    let lon = city.lon
-    get100sOfTweets(maxId, lat, lon, 5)
+    get100sOfTweets(maxId, city, 5)
   }
 }
 
-async function get100sOfTweets(maxId, lat, lon, number) {
+async function get100sOfTweets(startMaxId, city, number) {
+  maxId = startMaxId
   for (let i = 0; i < number; i++) {
-    url = `https://api.twitter.com/1.1/search/tweets.json?q=geocode:${lat},${lon},${radius}km&count=100&max_id=${maxId}`
-    await get100Tweets(url, options)
+    url = `https://api.twitter.com/1.1/search/tweets.json?q=geocode:${city.lat},${city.lon},${radius}km&count=100&max_id=${maxId}`
+    await get100Tweets(url, options, city.name, i + 1)
   }
 }
 
-async function get100Tweets(url, options) {
+async function get100Tweets(url, options, cityName, fileNumber) {
   const response = await fetch(url, options)
   const data = await response.json()
-  //console.log(data)
-  maxId = getMaxID(data) // reset MaxID
-  console.log(data)
+  maxId = await getMaxID(data)
+  // reset MaxID
+  fs.writeFileSync(
+    `JSONDATA/${cityName}_${fileNumber}.json`,
+    JSON.stringify(data)
+  )
 }
 
 // HELPER FUNCTIIONS
