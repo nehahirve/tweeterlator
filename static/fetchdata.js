@@ -1,5 +1,5 @@
-var https = require("follow-redirects").https
-var fs = require("fs")
+const https = require("follow-redirects").https
+const fs = require("fs")
 
 const radius = 5
 
@@ -13,57 +13,108 @@ const cities = [
 
 let options, maxId
 
-function getData() {
-  let text
+function fetchData(city, maxId, i) {
+  // set options 
+  // Fetch 100 tweets from one city
+  options = {
+    method: "GET",
+    hostname: "api.twitter.com",
+    path: `/1.1/search/tweets.json?q=geocode%3A${city.lat}%2C${city.lon}%2C${radius}km&count=100&max_id=${maxId}`,
+    headers: {
+      Authorization:
+        "Bearer AAAAAAAAAAAAAAAAAAAAAL95JwEAAAAA%2BHXhTUoCMMZevQt2kq0qMTwuDkQ%3D32LFyGWm49UV3oz3R3xNld4IqDTe1ua4ZkRcAzFerCQV2wgYMe",
+      Cookie:
+        'personalization_id="v1_LT8r3+BhOs+k4ZsQDiqyEw=="; guest_id=v1%3A160570801728849585',
+    },
+    maxRedirects: 20,
+  }
+
+  let req = https.request(options, function (res) {
+    let chunks = []
+
+    res.on("data", function (chunk) {
+      chunks.push(chunk)
+    })
+
+    res.on("end", function (chunk) {
+      let body = Buffer.concat(chunks)
+      fs.writeFileSync(
+        `${city.name}_${i}.json`,
+        JSON.stringify(body.toString())
+      )
+      return ('hello');
+    })
+
+    res.on("error", function (error) {
+      console.error(error)
+    })
+  })
+  
+  req.end()
+  return ('hi');
+}
+
+async function getData() {
   for (let city of cities) {
-    for (let i = 0; i < 5; i++) {
-      maxId = 0
-
-      options = {
-        method: "GET",
-        hostname: "api.twitter.com",
-        path: `/1.1/search/tweets.json?q=geocode%3A${city.lat}%2C${city.lon}%2C${radius}km&count=100&max_id=${maxId}`,
-        headers: {
-          Authorization:
-            "Bearer AAAAAAAAAAAAAAAAAAAAAL95JwEAAAAA%2BHXhTUoCMMZevQt2kq0qMTwuDkQ%3D32LFyGWm49UV3oz3R3xNld4IqDTe1ua4ZkRcAzFerCQV2wgYMe",
-          Cookie:
-            'personalization_id="v1_LT8r3+BhOs+k4ZsQDiqyEw=="; guest_id=v1%3A160570801728849585',
-        },
-        maxRedirects: 20,
-      }
-
-      let req = https.request(options, function (res) {
-        let chunks = []
-
-        res.on("data", function (chunk) {
-          chunks.push(chunk)
-        })
-
-        res.on("end", function (chunk) {
-          let body = Buffer.concat(chunks)
-          let workingData = JSON.parse(body.toString())
-          let maxIdString = workingData.search_metadata.next_results
-          if (maxIdString) {
-            nextMaxId = maxIdString.match(/\d+/)
-            maxId = nextMaxId[0]
-            console.log(maxId)
-          }
-          //text = text + body.toString()
-          //console.log(text)
-          fs.writeFileSync(
-            `${city.name}_${i + 1}.json`,
-            JSON.stringify(body.toString())
-          )
-        })
-
-        res.on("error", function (error) {
-          console.error(error)
-        })
-      })
-
-      req.end()
-    }
+    console.log(fetchData (city, 0, 1));
+   // await fetchData ()
   }
 }
 
+// function getData() {
+//   let text
+//   for (let city of cities) {
+//     for (let i = 0; i < 5; i++) {
+//       maxId = 0
+
+//       options = {
+//         method: "GET",
+//         hostname: "api.twitter.com",
+//         path: `/1.1/search/tweets.json?q=geocode%3A${city.lat}%2C${city.lon}%2C${radius}km&count=100&max_id=${maxId}`,
+//         headers: {
+//           Authorization:
+//             "Bearer AAAAAAAAAAAAAAAAAAAAAL95JwEAAAAA%2BHXhTUoCMMZevQt2kq0qMTwuDkQ%3D32LFyGWm49UV3oz3R3xNld4IqDTe1ua4ZkRcAzFerCQV2wgYMe",
+//           Cookie:
+//             'personalization_id="v1_LT8r3+BhOs+k4ZsQDiqyEw=="; guest_id=v1%3A160570801728849585',
+//         },
+//         maxRedirects: 20,
+//       }
+
+//       let req = https.request(options, function (res) {
+//         let chunks = []
+
+//         res.on("data", function (chunk) {
+//           chunks.push(chunk)
+//         })
+
+//         res.on("end", function (chunk) {
+//           let body = Buffer.concat(chunks)
+          
+//           //text = text + body.toString()
+//           //console.log(text)
+//           fs.writeFileSync(
+//             `${city.name}_${i + 1}.json`,
+//             JSON.stringify(body.toString())
+//           )
+//         })
+
+//         res.on("error", function (error) {
+//           console.error(error)
+//         })
+//       })
+
+//       req.end()
+//     }
+//   }
+// }
+
 getData()
+
+
+          // let workingData = JSON.parse(body.toString())
+          // let maxIdString = workingData.search_metadata.next_results
+          // if (maxIdString) {
+          //   nextMaxId = maxIdString.match(/\d+/)
+          //   maxId = nextMaxId[0]
+          //   console.log(maxId)
+          // }
