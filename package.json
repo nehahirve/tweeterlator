@@ -16,16 +16,18 @@
   "dependencies": {
     "@nivo/core": "^0.65.0",
     "@nivo/network": "^0.65.1",
-    "@nivo/tooltip": "^0.65.1",
+    "cytoscape": "^3.17.0",
+    "cytoscape-fcose": "^1.2.3",
     "ez-markov": "^1.2.1",
     "gatsby": "^2.25.3",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "node-fetch": "^2.6.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^17.0.0",
+    "react-cytoscapejs": "^1.2.1",
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "prettier": "^2.1.2"
   },
   "repository": {
     "type": "git",
