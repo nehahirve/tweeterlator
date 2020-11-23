@@ -1,20 +1,12 @@
-import React, { useState } from "react"
-import Graph from "../components/graph"
+import React, { useState } from 'react'
+import Graph from '../components/graph'
 
 export default function ToggleableButton(props) {
   console.log(props.station)
   if (props.isOpen) {
     return (
       <>
-        <button
-          style={{
-            left: `${props.coordinates.x}%`,
-            top: `${props.coordinates.y}%`,
-          }}
-          className="green"
-          onClick={props.onClick}
-          stationName={props.station}
-        ></button>
+        <Graph stationName={props.station} />
       </>
     )
   } else {
@@ -26,7 +18,7 @@ export default function ToggleableButton(props) {
             top: `${props.coordinates.y}%`,
           }}
           onClick={props.onClick}
-          stationName={props.station}
+          stationname={props.station}
         ></button>
       </>
     )

@@ -1,21 +1,13 @@
-import React, { useState } from "react"
-import ToggleableButton from "../components/toggleable_button"
+import React, { useState } from 'react'
+import ToggleableButton from '../components/toggleable_button'
 
 export default function ButtonList(props) {
-  const [currentButton, setCurrentButton] = useState(null)
-
-  function toggle(e) {
-    console.log(e.target.getAttribute("stationname"))
-    let current = e.target.getAttribute("stationname")
-    setCurrentButton(current)
-  }
-
   const stations = props.stations.map((station, index) => {
-    if (currentButton === station.name) {
+    if (props.stations.isOpen) {
       return (
         <ToggleableButton
           key={index}
-          onClick={toggle}
+          onClick={props.onClick}
           station={station.name}
           coordinates={station.pos}
           isOpen={true}
@@ -25,7 +17,7 @@ export default function ButtonList(props) {
       return (
         <ToggleableButton
           key={index}
-          onClick={toggle}
+          onClick={props.onClick}
           station={station.name}
           coordinates={station.pos}
           isOpen={false}

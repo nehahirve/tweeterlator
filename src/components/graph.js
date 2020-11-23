@@ -1,48 +1,59 @@
-import React from "react"
-import Cytoscape from "cytoscape"
-import fcose from "cytoscape-fcose"
-import CytoscapeComponent from "react-cytoscapejs"
+import React from 'react'
+import Cytoscape from 'cytoscape'
+import fcose from 'cytoscape-fcose'
+import CytoscapeComponent from 'react-cytoscapejs'
 
-import data from "../../static/data.json"
+import data from '../../static/neha.json'
 
 Cytoscape.use(fcose)
 
 export default class Graph extends React.Component {
   constructor(props) {
     super(props)
-    this.ready = this.ready.bind(this)
+    this.myCyRef = React.createRef()
   }
 
-  ready() {
-    console.log("hello")
+  componentDidMount() {
+    this.myCyRef.nodes().forEach(function (node) {
+      let size = node._private.data.size
+      console.log(node._private.data.size, node._private.data.label)
+      // let size = Math.random() * 50 + 10
+      node.css('width', size * 2)
+      node.css('height', size * 2)
+    })
+    this.myCyRef
+      .layout({ name: 'random', animate: true, animationDuration: 1000 })
+      .run()
   }
 
   render() {
-    const layout = { name: "random" }
+    //const layout = { name: 'fcose', animate: true, animationDuration: 500 }
 
     return (
       <CytoscapeComponent
         className="cy"
         elements={data}
-        layout={layout}
         stylesheet={[
           {
-            selector: "node",
+            selector: 'node',
             style: {
-              shape: "ellipse",
+              shape: 'ellipse',
+              label: 'data(label)',
+              color: 'red',
+              width: 'data(size)',
+              height: 'data(size)',
             },
           },
           {
-            selector: "edge",
+            selector: 'edge',
             style: {
-              width: 1,
+              width: 'data(weight)',
             },
           },
         ]}
         cy={cy => {
-          this.cy = cy
+          this.myCyRef = cy
         }}
-        onClick={() => this.ready()}
       />
     )
   }
