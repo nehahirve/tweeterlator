@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import Graph from '../components/graph'
 
 export default function ToggleableButton(props) {
-  console.log(props.station)
   if (props.isOpen) {
     return (
       <>
-        <Graph stationName={props.station} />
+        <Graph />
       </>
     )
   } else {
