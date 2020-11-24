@@ -47,3 +47,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.station-list button{
+	color: #29abe2;
+}
+.station-list button.green{
+	color: #06d6a0
+}

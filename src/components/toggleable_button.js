@@ -14,7 +14,7 @@ export default function ToggleableButton(props) {
           className="green"
           onClick={props.onClick}
           stationName={props.station}
-        ></button>
+        >{props.station}</button>
       </>
     )
   } else {
@@ -27,7 +27,7 @@ export default function ToggleableButton(props) {
           }}
           onClick={props.onClick}
           stationName={props.station}
-        ></button>
+        >{props.station}</button>
       </>
     )
   }
