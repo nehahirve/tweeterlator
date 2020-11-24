@@ -11,7 +11,7 @@ export default function ToggleableButton(props) {
             left: `${props.coordinates.x}%`,
             top: `${props.coordinates.y}%`,
           }}
-          className="green"
+          className={`green ${props.station}`}
           onClick={props.onClick}
           stationName={props.station}
         >{props.station}</button>
@@ -25,6 +25,7 @@ export default function ToggleableButton(props) {
             left: `${props.coordinates.x}%`,
             top: `${props.coordinates.y}%`,
           }}
+          className = {props.station}
           onClick={props.onClick}
           stationName={props.station}
         >{props.station}</button>
