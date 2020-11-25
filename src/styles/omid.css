@@ -11,12 +11,13 @@ nav{
 nav ul li{
     padding: 0 0 1rem;
 }
-.info{
+.infoBtn{
     position: fixed;
     right: 0;
     top: 0;
 }
 .info-text{
+    display: none;
     color: aliceblue;
     border: red solid 1px;
     width: 25vw;
@@ -24,6 +25,9 @@ nav ul li{
     position: absolute;
     right: 0;
     top: 3rem;
+}
+.info-text.show{
+    display: block;
 }
 
 .station-list button{
