@@ -47,7 +47,12 @@ main {
   position: relative;
   // height: 100%;
   grid-area: graph;
+  
   // border: 1px solid limegreen;
+  div {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .about-text-wrapper {
@@ -63,6 +68,7 @@ main {
 }
 
 .about-text {
+  background-color: $background;
   border: 3px solid $accent;
   border-radius: 2%;
   height: 400px;
@@ -125,4 +131,8 @@ main {
     } 
   }
   
+}
+
+.test {
+  background: green;
 }
