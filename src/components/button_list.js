@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ToggleableButton from '../components/toggleable_button'
 
 export default function ButtonList(props) {

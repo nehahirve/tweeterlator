@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ButtonList from '../components/button_list'
 import lines from '../../static/SVG/lines.svg'
 

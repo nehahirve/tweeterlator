@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 // import Header from "../components/header"
 import Map from '../components/map'
-import AboutButton from '../components/lovisas_about_button'
+import AboutButton from '../components/about_button'
 import AboutText from '../components/about_text'
-import MyGraph from '../components/my_graph'
+import VisGraph from '../components/vis_graph'
 
 export default function Home() {
   const [aboutText, setAboutText] = useState(false)
@@ -40,7 +40,7 @@ export default function Home() {
           <Map stationList={stationList} onClick={updateCurrentStation} />
         </section>
         <section className="graph-container">
-          <MyGraph station={currentStation} isOpen={graphVisible} />
+          <VisGraph station={currentStation} isOpen={graphVisible} />
         </section>
       </main>
       <section className="aboutText">

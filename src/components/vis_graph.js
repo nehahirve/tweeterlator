@@ -1,9 +1,9 @@
 import React from 'react'
 import Graph from 'react-graph-vis'
-import data from '../../static/neha.json'
+import data from '../../static/testdata.json'
 //import 'react-vis/dist/style.css'
 
-export default function MyGraph(props) {
+export default function VisGraph(props) {
   const graph = data
 
   const options = {

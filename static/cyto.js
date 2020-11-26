@@ -101,4 +101,4 @@ for (let edge of graph.edges) {
   cytoData.push(dataObj)
 }
 
-fs.writeFileSync('neha.json', JSON.stringify(cytoData))
+fs.writeFileSync('data_ctyo.json', JSON.stringify(cytoData))
