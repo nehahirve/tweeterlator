@@ -5,7 +5,18 @@ export default function ToggleableButton(props) {
   if (props.isOpen) {
     return (
       <>
-        <Graph />
+
+        <button
+          style={{
+            left: `${props.coordinates.x}%`,
+            top: `${props.coordinates.y}%`,
+          }}
+          className={`green ${props.station}`}
+          onClick={props.onClick}
+          stationName={props.station}
+        >{props.station}</button>
+
+
       </>
     )
   } else {
@@ -16,9 +27,12 @@ export default function ToggleableButton(props) {
             left: `${props.coordinates.x}%`,
             top: `${props.coordinates.y}%`,
           }}
+          className = {props.station}
           onClick={props.onClick}
-          stationname={props.station}
-        ></button>
+
+          stationName={props.station}
+        >{props.station}</button>
+
       </>
     )
   }

@@ -1,0 +1,62 @@
+.svg-map{
+    width: 25%;
+}
+.page-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 6rem 1.4fr;
+}
+nav{
+    padding: 1.8rem 0 0 1.8rem;
+}
+nav ul li{
+    padding: 0 0 1rem;
+}
+.infoBtn{
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.info-text{
+    display: none;
+    color: aliceblue;
+    border: red solid 1px;
+    width: 25vw;
+    height: 90vh;
+    position: absolute;
+    right: 0;
+    top: 3rem;
+}
+.info-text.show{
+    display: block;
+}
+
+.station-list button{
+	color: #29abe2;
+}
+
+.station-list button{
+	border:1px solid #29abe2;
+	width:3.4rem;
+	height:1.6rem;
+	cursor: pointer;
+}
+.station-list button.green{
+	color: #06d6a0;
+	border-color: #06d6a0;
+}
+
+button.Stockholm, button.Sundsvall{
+	width: 4.3rem;
+}
+button.Göteborg{
+	width: 4rem;
+}
+
+main{
+	justify-content: start;
+	padding: 0 0 0 3rem;
+}
+
+.chart{
+    display: none;
+}
