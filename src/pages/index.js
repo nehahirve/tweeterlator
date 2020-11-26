@@ -1,24 +1,30 @@
-import React from "react"
+import React, { useState } from 'react'
 // import Header from "../components/header"
-import Map from "../components/map"
-import BubbleChart from "../components/bubbleChart"
-import Info from "../components/infoText"
+import Map from '../components/map'
+import AboutButton from '../components/lovisas_about_button'
+import AboutText from '../components/about_text'
 
 export default function Home() {
-  
+  const [aboutText, setAboutText] = useState(true)
+
+  function toggleAboutText() {
+    setAboutText(!aboutText)
+  }
+
   return (
     <>
-      <Info />
-      <div className="page-wrapper">
-        
-        <main>
+      <nav>
+        <AboutButton onClick={toggleAboutText} />
+      </nav>
+      <main>
+        <section className="map-container">
           <Map />
-        </main>
-        {/* <Header /> */}
-        <div className="chart">
-          <BubbleChart />
-        </div>
-      </div>
+        </section>
+        <section className="graph-container"></section>
+      </main>
+      <section className="aboutText">
+        <AboutText isOpen={aboutText} />
+      </section>
     </>
   )
 }

@@ -1,31 +1,37 @@
-const TextCleaner = require('text-cleaner')
-const MoxyTA = require('moxy-ta')
-const Markov = require('ez-markov')
+const TextCleaner = require('text-cleaner') // tool to clean up text
+const MoxyTA = require('moxy-ta') // word frequency analyser
+const Markov = require('ez-markov') // creates a markov graph
 const fs = require('fs')
-const sw = require('stopword')
+const sw = require('stopword') // removes common words
 
-let text = fs.readFileSync('TEXTDATA/stockholm.txt').toString()
+// READ THE TEXT, TRIM AND CLEAN IT
+let text = fs.readFileSync('TEXTDATA/stockholm.txt').toString().toLowerCase()
 
-text = text.toLowerCase().trim()
-let result = TextCleaner(text).condense().valueOf()
+let condensedText = TextCleaner(text).condense().valueOf()
 
-let swedish = sw.removeStopwords(result.split(' '), sw.sv).join(' ')
-let english = sw.removeStopwords(swedish.split(' '), sw.en).join(' ')
-console.log(text.length, english.length)
+// REMOVE STOPWORDS
+let customStopWords = ['rt', ',', '=', '-', '--', "'"]
 
-const ta = new MoxyTA(english)
-result = ta.scan()
+let swedish = sw.removeStopwords(condensedText.split(' '), sw.sv)
+let english = sw.removeStopwords(swedish, sw.en)
+let custom = sw.removeStopwords(english, customStopWords).join(' ')
 
-let frequencyData = result.wordFrequency
+// GETTING WORD FREQUENCY DATA
+const ta = new MoxyTA(custom)
+let frequencyData = ta.scan().wordFrequency
 
+// CREATE MARKOV CHAIN
 const chain = new Markov()
-chain.addCorpus(text)
+
+chain.addCorpus(custom)
 const graph = chain.export()
 
+// FILTER OUT THE GRAPH TO ONLY INCLUDE TOP WORDS
 let topWords = {}
 
 for (let [key, value] of Object.entries(frequencyData)) {
-  if (value.frequency > 5) {
+  if (value.frequency > 3) {
+    // threshold for top words
     topWords[key] = value.frequency
   }
 }

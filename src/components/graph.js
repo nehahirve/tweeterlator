@@ -16,13 +16,12 @@ export default class Graph extends React.Component {
   componentDidMount() {
     this.myCyRef.nodes().forEach(function (node) {
       let size = node._private.data.size
-      console.log(node._private.data.size, node._private.data.label)
       // let size = Math.random() * 50 + 10
-      node.css('width', size * 2)
-      node.css('height', size * 2)
+      node.css('width', Math.pow(size, 1.5))
+      node.css('height', Math.pow(size, 1.5))
     })
     this.myCyRef
-      .layout({ name: 'random', animate: true, animationDuration: 1000 })
+      .layout({ name: 'random', animate: false, animationDuration: 1000 })
       .run()
   }
 
