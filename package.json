@@ -18,6 +18,7 @@
     "@nivo/network": "^0.65.1",
     "cytoscape": "^3.17.0",
     "cytoscape-fcose": "^1.2.3",
+    "d3-force": "^2.1.1",
     "ez-markov": "^1.2.1",
     "gatsby": "^2.25.3",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -26,8 +27,12 @@
     "react": "^17.0.0",
     "react-cytoscapejs": "^1.2.1",
     "react-dom": "^17.0.0",
+    "react-graph-vis": "^1.0.5",
+    "react-vis": "^1.11.7",
+    "react-vis-network-graph": "^3.0.1",
     "stopword": "^1.0.3",
-    "text-cleaner": "^1.2.1"
+    "text-cleaner": "^1.2.1",
+    "vis-network": "^8.5.4"
   },
   "devDependencies": {
     "prettier": "^2.1.2"

@@ -1,22 +1,21 @@
-import React, { useState } from 'react'
-import Graph from '../components/graph'
+import React from 'react'
 
 export default function ToggleableButton(props) {
-  if (props.isOpen) {
+  if (props.clickedStation === props.station) {
     return (
       <>
-
         <button
           style={{
             left: `${props.coordinates.x}%`,
             top: `${props.coordinates.y}%`,
+            outline: '2px solid red',
           }}
-          className={`green ${props.station}`}
+          className={`active ${props.station}`}
           onClick={props.onClick}
           stationName={props.station}
-        >{props.station}</button>
-
-
+        >
+          {props.station}
+        </button>
       </>
     )
   } else {
@@ -27,12 +26,12 @@ export default function ToggleableButton(props) {
             left: `${props.coordinates.x}%`,
             top: `${props.coordinates.y}%`,
           }}
-          className = {props.station}
+          className={props.station}
           onClick={props.onClick}
-
           stationName={props.station}
-        >{props.station}</button>
-
+        >
+          {props.station}
+        </button>
       </>
     )
   }

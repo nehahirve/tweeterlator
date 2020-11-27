@@ -8,6 +8,8 @@ const cities = [
   { name: "umeå", lat: 63.82842, lon: 20.25972 },
   { name: "sundsvall", lat: 62.39129, lon: 17.3063 },
   { name: "göteborg", lat: 57.650002, lon: 12.016667 },
+  { name: "karlstad", lat: 59.3793, lon: 13.50357},
+  { name: "kiruna", lat: 67.85572, lon: 20.22513},
 ]
 
 let maxId = 0

@@ -1,10 +1,18 @@
 import React from 'react'
 
-export default class Info extends React.Component {
-  render() {
+export default function AboutButton(props) {
+  if (props.isOpen) {
     return (
       <>
-        <button className="infoBtn" onClick={props.onClick}>
+        <button className="about-button" onClick={props.onClick}>
+          x
+        </button>
+      </>
+    )
+  } else {
+    return (
+      <>
+        <button className="about-button" onClick={props.onClick}>
           About
         </button>
       </>
