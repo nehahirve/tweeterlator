@@ -28,6 +28,8 @@ export default function Home() {
   function updateCurrentStation(station) {
     console.log(station)
     setCurrentStation(station)
+    setAboutText(false)
+    setGraphVisible(true)
   }
 
   return (
