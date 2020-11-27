@@ -39,7 +39,7 @@ function createDictionaryofTopWords(threshold) {
   return topWords
 }
 
-const topWords = createDictionaryofTopWords(3)
+const topWords = createDictionaryofTopWords(5)
 
 const newNodes = []
 
