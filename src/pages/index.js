@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       <nav>
-        <AboutButton onClick={toggleAboutText} />
+        <AboutButton onClick={toggleAboutText} isOpen={aboutText} />
       </nav>
       <main>
         <section className="map-container">
