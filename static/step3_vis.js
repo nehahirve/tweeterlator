@@ -1,4 +1,105 @@
-cnst MoxyAtMarko ,"value":4,"label":"2"},{"id":26,"value":4,"label":"2020"},{"id":2= equire('z-mrkov') / creats tfs = equre('fs')tsw = equre('stopord) // remvescoED THETEX, TRIM AD LEAN ITtxt = s.radFileSyc(TEXTDATAstockhlmcndensdTet = Textlener(text.condnsEOVE S60,"value":4,"label":"relevant"},{"id":OPWRDScstomSo13,"value":4,"label":"mask"},{"id":1pWods = ['r',',', '=' '-' '6,"value":4,"label":"one"},{"id":16sedish189,"value":4,"label":"tycker"},{"id":196,"value":4,"label":"november"},{"id":= 3,"value":5,"label":"helt"},{"id":21swremoveStpwrds(condnsedTxteglish= 2,"value":4,"label":"#hockeyettan"},{"id":24swremoveStpwrds(swedsh, s.ecstom  sw.emoveStowods(englih, customStopWrdETING ORD REQUENCYDAAtta = ew MxyTA(cusomfequenyDat = ta.scn(.wordFreuencyRATE MRKOVCHAINtchain= ne Markov(naddCopus(ustom)"},{"id":264,"value":4,"label":"lovetgraph= chin.expor(,"label":"it"},{"id":286,"value":4)twter"},{"id":308,"value":5,"label":"finnsn"},{"id":310,"value":4,"label":"svensk"},{"id":314,"value":4,"label":"eda"},{"id":315,"value":4,"label":"@robertlesaqueITER OT TH GRAPH T OLY INCLUE TOP WORDSon"},{"id":317,"value":5,"label":"@bjorklundvictr"},{"id":318,"value":5,"label":"@haifbaliton crateDctionaryfTpWords(tresen"},{"id":343,"value":5,"label":"rätt"},{"id":349,"value":4,"labhl":"male"},{"id":357,"value":4,"label":"regeriogenl) ttopWods ={}r(let key,value] o Oject.enties(freqeni (vale.2,"value":4,"label":"world"},{"id":406,"value":5,"label":"säger"},{"id":40frquency >theshold)  // the12,"value":s,"label":"begränsa"},{"id":436,"value":4,"label":"situation"},{"id":44hod for to wods topWods[ky] = vale.requency"},{"id":482,"value":4,"label":"today"},{"id":486,"value":5,"label":"work}trn toWor,"value":9,"label":"ab"},{"id":540,"value":4,"label":"need"},{"id":563,"value":4,"label":"cute"},{"id":565,"value":4,"label":"nadine"},{"id":566,"value":4,"label":"gordimer"},{"id":567d"value":4,"label":"fearless"},{"id":568,4,"label":"anti-apartheid"},{"id":56,"value":4,"label":"activist"}{"id":570,"value":4,"label":"writer"},{"id":571,"value":4,"kept"},{id":572,"vlue":5,"lael:"true"e"},{"id":574,"valu":4,label":"racism"575,"value":5,"label":"right"},{"id":57,"value":4,"label":"front"},{"id":578,"value":5,"label":"in…"},{"id":6,"label":"game"},{"id":650,"value":5viktit"},{"id":651,"value":4,"lbel":"eddelande"},{"id":653,"value":4,"label":"tror"},{"id":654,"value":5,"label":"räcker"},{"id":655,"value":5,"label":"följa"},{"id":656,"value":4,"labl":lagen"},{"id":657,"value":4,"label":"fullt"ttopWods =createDitinaryofToWord(3"},{"id:693,"value":4,"label":"dagens"},{"id":698,"value":5,"label":"stort"},{"id":718,"value":5,"label":"😂"},{"id":737,"value":5,"label":"people"},{"id":762,"value":4,"label":"redan"tnewNoes ,"value":7,"label":"det"},{"id":765=[]e":5,"label":"tänkr},{"id"79"value":4,"label":"kritisera"},{"id":808,"value":4,"label":"mellan"},{"id":819,"value":4,"@aktiealbin"},{i":820,"valu":5,"label":"@inveserarenaab"},{"id":863,"vlue":4,"lel:"rapporterar"(et noe ofgraph.noes {"},{id":866,"value":4,"label":"b"},{"id":867,"value":4,"label":"volym"},{"id":869,"value":4,"label":"@"},{"id":871,"value":4,"label":"utfört" topWods.hsOwnProprt(node.lael)) et"},{"id":876,"value":4,"label":"gör"},{"id":885,"value":4,"label":"embark"},{"id":887,"value":4,"label":"applying"},{"id":888,"value":4,"label":"technology"},{"id":889,"value":5,"label":"better"},{"id":890,"value":4,"label":"tools"},{"id":891,"value":4,"label":"easier"},{"id":892,"valu{":4,"label":"creae/conso8e3,"value":4,"label":"scale"},{"id":894,"value":5,"label":"content"},{"id":895,"value":4,"label":"late…"},{"id":9.lo(node.laelnwNode.pus(node)1,"value":4,"label":"swedish"},{"id":12042,"value":4,"label":"ai"},{"id":10(et noe074,"value":5,"label":"ny"},{"id": 085,"value":4,"label":"vid"},{"id":o11f ewNodes){d.valu 160,"value":4,"label":"stories"},{"id":1185,"value":5,"label":"yes"},{"id":1= toWords[noe.abel]14,"value":5,"label":"något"},{"id":12hnodes= newodes6,"label":"el"},{"id":138,"value":5,"label":"want"},{"id":1401,"value":5,"label":"kanske"},{"id":1429,"value":4,"label":"من"},{"id":1480,"value":4,"label":"@kasravist"},{"id":1487,"value":5,"label":"why"},{"id":1525,"value":4,"label":"based"},{"id":1570,"value":4el":"@sakin"},{"id":1571,"vaue5,lab":"sägae":6,"labl":"år"},{"id163,"value":4hller"},{"id":1681,"value":5,"label":"@sdiks"},{"id":1754,"value":5,"label":"envidio"},{"id":1755,"value":5,"label":"abdomentthis oint e have fl,"label":"la"},{"id":1757,"value":5,"label":"comadre"},{"id":1999t"valuer:5,"ed out o😆"},{"id":2000,"vadue":5,"lebels:"co/ax30vdafru"in039,"value":4,"label":"dns"},{"id":2nwEdge = []eenMorNewEdes = [](et ede of raph.edgs){fo  if (noe newEdge.6,"to":1118,"value":1,"title":"edge-1"},{"from":2puh(edg)2 break3}4567(et edgeof ewEdgs) 8r(let noe o grap.noes) {9i (node.d == edg.to {10 evenMorNewdges.ushedge)1 break2"},{"from":68,to":563,"value":1,"title":"edge-13"}45"},{"from":21,to":60,"value":1,"title":"edge-16"78hedges =evenoreNeEdge920d to cytdatastrucure2tvisData= {22ds: [],3gs: [],4":255,"to":256,"value":6,"title"edge-"},{"from":264,"to":26,"value":1,"title":"edge-26"},{"from":286,"to":920,"value":1,"title":"edge-27"},{"from":308,"to":309,"value":3,"title":"edge-28"},{"from":309":310,"value":3,"title"edge-9"},{"from":31,"to":31e":4,"title":"edg-30"},{"from31,"to":317,"value":5,"title":"edge-31"},{"from":317,"to":318,"value":53"},{"from":318,"to":44,"value":1,"title":"edge-330,"value":2,"title":"edge-34"},{"from":32to":60,"1,"title":"edge-35"},{"from":343,"to":43value":1,"36"},{"from":343,"to":111,"value":1,"title":"edge-7(et nodeof gaph.nde8,"value":1,"title":"edge-3s"},{"from":402,"to":1042,"value":1,"title":"edge-39"},{"from":442,"to":797,"value":1)"title":"edge-40"},{"from":442,"to":1571,{e":1,"titl"edge-4"}{"from:486,"o":487,"value":2,"t4"},{"from":487,"to":888,"value":4,"title":"edge-43"},{"from":96,"to":60,value":1,"title":"edge-44"tdataObj= {,"to":865,"value":4,"title":"edge-45"},{"from":565,"to":566,"value":4,"title":"edge-46"},{"from":566,"to":567,"value":4,"title":"edge-47"},{"from":567568,"value":4,"title":"edge-4"},{"from":58,"to":69,"value":4,"title":"edge-49"}{"from":569,"to":570,"value":4,"title":"edge-50"},{"from":570,"to":571,"value":4,"title":"edge-51"},{from":571,"to":572,"5"},{"from":572,"to":573,"value":4,"title":"edge-53"},{"from":573,"to":574,"value":4,"title":"edge-54"},{"from":73,"to":113,"value":1,"title":"edge-55"},{"from":574,"to":575,"value":4,"title":"edge-56"},{"from":575,"to":576,"value":4,"title":edge-57"},{"from":578,"to":563,"value":1,"title":"edge-58"i: nod":604,eto".d94,"value":4,"title":"edge-,"},{"from":650,"to":651"value":4,"title":"edge-60"},{"from":653,"to":654,"value":4,"title":"edge-61"},{"from":654,"to":655,"value":4,"title":"edge-62"},{"from":655,"to:656,"value":4,"itle":"edge-63"},{"frm66,"to":657,"value":4,"title":"edge-64"},{"from":698,"to":020,"value":2,"title":"edge-65"},{"from":762,"to":270e":1,"title":"edg-66"},{"from":808,"to12,"value":1,"title":"edge-67"},{"from":819,"to":820,"value":368"},{"from":80,"to":1401,"value":1,"title":"edge-9vlue: noe59,"to":511,"value":4,"title":"edge-.0"},{"from":866,"to":867,"value":4,"title":"edge-71"},{"from":869,"to":871,"value":1,"title":"edge-72"},{"from":87vaue,73"},{"from":876,"to":343,"value":1,"title":"edge-74"},{"from":876,"to":114,"value":1,"title":"edge-75"},{"from":887,"to":487,"value":4,"title":"edge-76"},{"from":888,"to":889,"value":4,"title":"edge-77"},{"from":889,"to":890,"value":4,"title":"edge-78"},{"from":890,"to":891,"value":4,"title":"edge-9"},{"from":891,"to":892,value":4,"title":"edge-80"},{"from":892,"to":893,"value":4,"title":"edge-81"},{"from":893,"to":604,"value":4,"title":"edge-82"},{"from":920,"to":540,"value":1,"title":"edge-83"},{"from":1039,"to":563,"value":1,"title":"edge-84"lbel: noe.labl,5"title":"edge-86},{"from":1071,"o":1571,"value":1,"t87sata.nods.pus(databj)88"},{"from":1085,"to":69,"value":2,"title":"edge-89"},{"from":1160,"to":286,"value":1,"title":"edge-99,"value":1"title":"edge-92"},{"from":1214,"to":1571,9"},{"from":114,"to:343,"value":1,"title":"edge-94"cunter =095"},{"from":12,"to":1755,"value":5,"title":"edge-96"},{"from":1487,"to":168,"value":1,"title":"edge-97"},{"from:1487,"to":402,"value":1,"title":"edge-98"},{"from":1525,"to":1042,"value":2,"title":"edge-99","to":320,"value":2,"title":"edge-100"}{"from:1636,"213,"value":1,"title":"edge-101"},{"from":166,"to":39e":2,"titl":"edge-102"},{"from":1754,to"133value":5,"10"},{"from":1755,"to":1756,"value":5,"title":"edge-10"},{"from":1756,"to":1757,"value":5,"title":"edge-105r 
+const TextCleaner = require('text-cleaner') // tool to clean up text
+const MoxyTA = require('moxy-ta') // word frequency analyser
+const Markov = require('ez-markov') // creates a markov graph
+const fs = require('fs')
+const sw = require('stopword') // removes common words
+
+// READ THE TEXT, TRIM AND CLEAN IT
+let text = fs.readFileSync('TEXTDATA/stockholm.txt').toString().toLowerCase()
+
+let condensedText = TextCleaner(text).condense().valueOf()
+
+// REMOVE STOPWORDS
+let customStopWords = ['rt', ',', '=', '-', '--', "'"]
+
+let swedish = sw.removeStopwords(condensedText.split(' '), sw.sv)
+let english = sw.removeStopwords(swedish, sw.en)
+let custom = sw.removeStopwords(english, customStopWords).join(' ')
+
+// GETTING WORD FREQUENCY DATA
+const ta = new MoxyTA(custom)
+let frequencyData = ta.scan().wordFrequency
+
+// CREATE MARKOV CHAIN
+const chain = new Markov()
+
+chain.addCorpus(custom)
+const graph = chain.export()
+
+// FILTER OUT THE GRAPH TO ONLY INCLUDE TOP WORDS
+
+function createDictionaryofTopWords(threshold) {
+  let topWords = {}
+  for (let [key, value] of Object.entries(frequencyData)) {
+    if (value.frequency > threshold) {
+      // threshold for top words
+      topWords[key] = value.frequency
+    }
+  }
+  return topWords
+}
+
+const topWords = createDictionaryofTopWords(3)
+
+const newNodes = []
+
+for (let node of graph.nodes) {
+  if (topWords.hasOwnProperty(node.label)) {
+    //console.log(node.label)
+    newNodes.push(node)
+  }
+}
+
+for (let node of newNodes) {
+  node.value = topWords[node.label]
+}
+
+graph.nodes = newNodes
+
+// at this point we have filtered out nodes in graph
+
+let newEdges = []
+let evenMoreNewEdges = []
+for (let edge of graph.edges) {
+  for (let node of graph.nodes) {
+    if (node.id === edge.from) {
+      newEdges.push(edge)
+      break
+    }
+  }
+}
+
+for (let edge of newEdges) {
+  for (let node of graph.nodes) {
+    if (node.id === edge.to) {
+      evenMoreNewEdges.push(edge)
+      break
+    }
+  }
+}
+
+graph.edges = evenMoreNewEdges
+
+// add to cytodata structure
+const visData = {
+  nodes: [],
+  edges: [],
+}
+
+for (let node of graph.nodes) {
+  let dataObj = {
+    id: node.id,
+    value: node.value,
+    label: node.label,
+  }
+  visData.nodes.push(dataObj)
+}
+
+let counter = 0
+
+for (let edge of graph.edges) {
+  counter++
+
   let dataObj = {
     from: edge.from,
     to: edge.to,
