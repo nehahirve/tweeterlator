@@ -6,7 +6,7 @@ export default function Map(props) {
   return (
     <div className="background-map">
       <img src={lines} alt="" />
-      <ButtonList stationList={props.stationList} onClick={props.onClick} />
+      <ButtonList stationList={props.stationList} onClick={props.onClick} currentStation={props.currentStation} />
     </div>
   )
 }

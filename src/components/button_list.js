@@ -14,6 +14,7 @@ export default function ButtonList(props) {
         onClick={handleButtonClick}
         station={station.name}
         coordinates={station.pos}
+        currentStation={props.currentStation}
       />
     )
   })

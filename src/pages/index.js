@@ -26,7 +26,6 @@ export default function Home() {
   }
 
   function updateCurrentStation(station) {
-    console.log(station)
     setCurrentStation(station)
     setAboutText(false)
     setGraphVisible(true)
@@ -39,7 +38,7 @@ export default function Home() {
       </nav>
       <main>
         <section className="map-container">
-          <Map stationList={stationList} onClick={updateCurrentStation} />
+          <Map stationList={stationList} onClick={updateCurrentStation} currentStation={currentStation} />
         </section>
         <section className="graph-container">
           <VisGraph station={currentStation} isOpen={graphVisible} />

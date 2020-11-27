@@ -1,7 +1,9 @@
 import React from 'react'
 
 export default function ToggleableButton(props) {
-  if (props.isOpen) {
+  console.log(props)
+  if (props.currentStation === props.station) {
+    
     return (
       <>
         <button
@@ -9,7 +11,7 @@ export default function ToggleableButton(props) {
             left: `${props.coordinates.x}%`,
             top: `${props.coordinates.y}%`,
           }}
-          className={`green ${props.station}`}
+          className={`active ${props.station}`}
           onClick={props.onClick}
           stationName={props.station}
         >
@@ -18,6 +20,7 @@ export default function ToggleableButton(props) {
       </>
     )
   } else {
+    
     return (
       <>
         <button
