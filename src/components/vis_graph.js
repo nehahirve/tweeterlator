@@ -4,7 +4,7 @@ import data from '../../static/data_vis.json'
 //import 'react-vis/dist/style.css'
 
 export default function VisGraph(props) {
-  const graph = data
+  const graph = data[props.station.toLowerCase()]
 
   const options = {
     layout: {
