@@ -38,7 +38,11 @@ export default function Home() {
       </nav>
       <main>
         <section className="map-container">
-          <Map stationList={stationList} onClick={updateCurrentStation} currentStation={currentStation} />
+          <Map
+            stationList={stationList}
+            onClick={updateCurrentStation}
+            clickedStation={currentStation}
+          />
         </section>
         <section className="graph-container">
           <VisGraph station={currentStation} isOpen={graphVisible} />
