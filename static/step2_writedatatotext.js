@@ -10,16 +10,23 @@ const cities = [
   { name: "kiruna", lat: 67.85572, lon: 20.22513},
 ]
 
-for (let city of cities) {
-  let text = ''
-  for (let i = 0; i < 5; i++) {
-    let file = fs.readFileSync(`JSONDATA/${city.name}_${i + 1}.json`)
-    let data = JSON.parse(file)
-    let tweets = data.statuses
-    for (let tweet of tweets) {
-      text += `${tweet.text}
-      `
+function writePagesofTweetContenttoTextFile (pages) {
+  for (let city of cities) {
+    let text = ''
+    for (let i = 0; i < pages; i++) {
+      let file = fs.readFileSync(`JSONDATA/${city.name}_${i + 1}.json`)
+      let data = JSON.parse(file)
+      let tweets = data.statuses
+      for (let tweet of tweets) {
+        text += `${tweet.text}
+        `
+      }
     }
+    fs.writeFileSync(`TEXTDATA/${city.name}.txt`, text)
   }
-  fs.writeFileSync(`TEXTDATA/${city.name}.txt`, text)
 }
+
+writePagesofTweetContenttoTextFile(5)
+
+
+
