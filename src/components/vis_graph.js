@@ -1,7 +1,16 @@
 import React from 'react'
 import Graph from 'react-graph-vis'
 import data from '../../static/data_vis.json'
+import sentimentData from '../../static/data_sentiment.json'
 //import 'react-vis/dist/style.css'
+
+const colors = {
+  color1: '#57CEE4',
+  color2: '#EF4D97',
+  color3: '#A8D698',
+  black: '#000',
+  white: '#F4F1E3',
+}
 
 export default class VisGraph extends React.Component {
   constructor(props) {
@@ -30,18 +39,18 @@ export default class VisGraph extends React.Component {
 
   addNode(network) {
     network.moveTo({
-      scale: 0.5,
+      scale: 0.4,
       position: { x: 0, y: 0 },
       offset: { x: 300, y: 0 },
     })
-    network.fit()
+    // network.fit()
     let cityPos = this.props.coords
 
     let coords = this.network.DOMtoCanvas(cityPos)
 
     const node = {
       id: 0,
-      label: 'CITY ' + this.props.station,
+      label: '',
       x: coords.x,
       y: coords.y,
       value: 0,
@@ -52,24 +61,24 @@ export default class VisGraph extends React.Component {
     const edge = {
       from: 0,
       to: data[this.props.station.toLowerCase()].nodes[3].id,
-      title: 'THIS IS THE EDGE',
-      value: 5,
+      title: this.props.station,
+      value: 10,
       length: 1000,
     }
+
     let newData = Object.assign({}, data[this.props.station.toLowerCase()])
     newData.nodes = newData.nodes.concat(node)
     newData.edges = newData.edges.concat(edge)
+
     this.setState({ graph: newData })
   }
 
   componentDidMount() {
-    console.log('mounted')
     this.setState({ currentCity: this.props.station })
     this.addNode(this.network)
   }
 
   componentDidUpdate(prevProps) {
-    console.log('updated')
     if (prevProps.station !== this.props.station) {
       this.setState({ currentCity: this.props.station })
       this.addNode(this.network)
@@ -77,10 +86,14 @@ export default class VisGraph extends React.Component {
   }
 
   selectLabel(values) {
-    values.color = 'yellow'
+    values.color = colors.black
   }
 
   render() {
+    const sentiment = sentimentData[this.props.station.toLowerCase()]
+
+    const moodColor = sentiment > 0 ? colors.color1 : colors.color2 + 'aa'
+
     const options = {
       autoResize: true,
       width: '100%',
@@ -95,10 +108,11 @@ export default class VisGraph extends React.Component {
           label: this.selectLabel,
         },
         color: {
-          background: 'red',
-          highlight: 'blue',
+          background: moodColor,
+          highlight: colors.black,
+          border: colors.black,
         },
-        font: { color: 'green', size: 40, face: 'IBM Plex Mono' },
+        font: { color: colors.black, size: 40, face: 'IBM Plex Mono' },
         shape: 'dot',
       },
       edges: {
@@ -106,19 +120,19 @@ export default class VisGraph extends React.Component {
           to: { enabled: false },
         },
         color: {
-          color: 'green',
-          highlight: 'red',
+          color: moodColor,
+          highlight: colors.black,
 
           inherit: 'from',
           opacity: 1.0,
         },
       },
       layout: {
-        randomSeed: 1,
+        randomSeed: 13141231,
       },
       physics: {
         enabled: true,
-        solver: 'barnesHut',
+        solver: 'repulsion',
       },
       interaction: {
         dragView: true,

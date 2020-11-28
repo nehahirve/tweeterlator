@@ -14,7 +14,8 @@ export default function ToggleableButton(props) {
           style={{
             left: `${props.coordinates.x}%`,
             top: `${props.coordinates.y}%`,
-            outline: '2px solid red',
+            background: '#000',
+            color: '#F4F1E3',
           }}
           className={`active ${props.station}`}
           onClick={props.onClick}
