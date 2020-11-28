@@ -62,7 +62,6 @@ main {
 
 .about-text-wrapper {
   // border: 10px solid green;
-  z-index: 1000;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -136,5 +135,11 @@ main {
     .green {
       background: green;
     }
+  }
+}
+
+.vis-network {
+  &:focus {
+    outline: none;
   }
 }

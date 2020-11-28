@@ -3,14 +3,7 @@ import Graph from 'react-graph-vis'
 import data from '../../static/data_vis.json'
 import sentimentData from '../../static/data_sentiment.json'
 //import 'react-vis/dist/style.css'
-
-const colors = {
-  color1: '#57CEE4',
-  color2: '#EF4D97',
-  color3: '#A8D698',
-  black: '#000',
-  white: '#F4F1E3',
-}
+import colors from '../../static/colours.json'
 
 export default class VisGraph extends React.Component {
   constructor(props) {

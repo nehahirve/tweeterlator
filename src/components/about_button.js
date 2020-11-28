@@ -7,7 +7,11 @@ export default function AboutButton(props) {
         <button
           className="about-button"
           onClick={props.onClick}
-          style={{ background: '#000', color: '#F4F1E3' }}
+          style={{
+            background: '#000',
+            color: '#F4F1E3',
+            transform: 'scale(1.3)',
+          }}
         >
           {`  X  `}
         </button>

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import colors from '../../static/colours.json'
 
 export default function ToggleableButton(props) {
   useEffect(() => {
@@ -14,8 +15,9 @@ export default function ToggleableButton(props) {
           style={{
             left: `${props.coordinates.x}%`,
             top: `${props.coordinates.y}%`,
-            background: '#000',
-            color: '#F4F1E3',
+            background: colors.black,
+            color: colors.white,
+            transform: 'scale(1.3)',
           }}
           className={`active ${props.station}`}
           onClick={props.onClick}
