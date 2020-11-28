@@ -21,7 +21,7 @@ function generateSentimentForAllCities(cities) {
     data[city.name] = colourMappedScore
     console.log(colourMappedScore)
   }
-  fs.writeFileSync('sentiment.json', JSON.stringify(data))
+  fs.writeFileSync('data_sentiment.json', JSON.stringify(data))
 }
 
 function colourMap(input) {
