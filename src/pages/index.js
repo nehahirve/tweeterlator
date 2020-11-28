@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import Header from "../components/header"
 import Map from '../components/map'
 import AboutButton from '../components/about_button'
@@ -9,6 +9,8 @@ export default function Home() {
   const [aboutText, setAboutText] = useState(false)
   const [graphVisible, setGraphVisible] = useState(true)
   const [currentStation, setCurrentStation] = useState('Stockholm')
+  const [targetX, setTargetX] = useState(0)
+  const [targetY, setTargetY] = useState(0)
 
   const stationList = [
     { name: 'Stockholm', pos: { x: 73, y: 67.5 } },
@@ -26,7 +28,11 @@ export default function Home() {
     setGraphVisible(!graphVisible)
   }
 
-  function updateCurrentStation(station) {
+  function updateCurrentStation(e) {
+    let station = e.target.innerText
+    var rect = e.target.getBoundingClientRect()
+    setTargetX((rect.left + rect.right) / 2)
+    setTargetY((rect.top + rect.bottom) / 2)
     setCurrentStation(station)
     setAboutText(false)
     setGraphVisible(true)
@@ -46,7 +52,11 @@ export default function Home() {
           />
         </section>
         <section className="graph-container">
-          <VisGraph station={currentStation} isOpen={graphVisible} />
+          <VisGraph
+            station={currentStation}
+            coords={{ x: targetX, y: targetY }}
+            isOpen={graphVisible}
+          />
         </section>
       </main>
       <section className="aboutText">

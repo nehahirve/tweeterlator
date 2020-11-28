@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function ToggleableButton(props) {
+  useEffect(() => {
+    if (props.clickedStation === props.station) {
+      // nothing
+    }
+  }, [])
+
   if (props.clickedStation === props.station) {
     return (
       <>
