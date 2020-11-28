@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`montserrat`],
-        display: "swap",
+        fonts: [`montserrat`, 'IBM Plex Mono'],
+        display: 'swap',
       },
     },
   ],
