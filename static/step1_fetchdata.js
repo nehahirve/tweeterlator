@@ -1,25 +1,17 @@
-const fetch = require("node-fetch")
-const fs = require("fs")
+const fetch = require('node-fetch')
+const fs = require('fs')
 
 const radius = 5
-const cities = [
-  { name: "stockholm", lat: 59.33258, lon: 18.0649 },
-  { name: "malmö", lat: 55.60587, lon: 13.00073 },
-  { name: "umeå", lat: 63.82842, lon: 20.25972 },
-  { name: "sundsvall", lat: 62.39129, lon: 17.3063 },
-  { name: "göteborg", lat: 57.650002, lon: 12.016667 },
-  { name: "karlstad", lat: 59.3793, lon: 13.50357},
-  { name: "kiruna", lat: 67.85572, lon: 20.22513},
-]
+const cities = require('./seed.json')
 
 let maxId = 0
 let url
 
 let options = {
-  method: "GET",
+  method: 'GET',
   headers: {
     Authorization:
-      "Bearer AAAAAAAAAAAAAAAAAAAAAL95JwEAAAAA%2BHXhTUoCMMZevQt2kq0qMTwuDkQ%3D32LFyGWm49UV3oz3R3xNld4IqDTe1ua4ZkRcAzFerCQV2wgYMe",
+      'Bearer AAAAAAAAAAAAAAAAAAAAAL95JwEAAAAA%2BHXhTUoCMMZevQt2kq0qMTwuDkQ%3D32LFyGWm49UV3oz3R3xNld4IqDTe1ua4ZkRcAzFerCQV2wgYMe',
     Cookie:
       'personalization_id="v1_LT8r3+BhOs+k4ZsQDiqyEw=="; guest_id=v1%3A160570801728849585',
   },
