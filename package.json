@@ -30,6 +30,8 @@
     "react-graph-vis": "^1.0.5",
     "react-vis": "^1.11.7",
     "react-vis-network-graph": "^3.0.1",
+    "sentiment": "^5.0.2",
+    "sentiment-swedish": "^1.1.0",
     "stopword": "^1.0.3",
     "text-cleaner": "^1.2.1",
     "vis-network": "^8.5.4"
