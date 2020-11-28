@@ -1,5 +1,4 @@
 const fs = require('fs') // removes common words
-const data = {}
 const sentimentSv = require('sentiment-swedish')
 const Sentiment = require('sentiment')
 
@@ -15,13 +14,19 @@ function generateSentimentForAllCities(cities) {
 
     let sentimentScoreSv = sentimentSv(textString).comparative
     let sentimentScoreEn = new Sentiment().analyze(textString).comparative
-    let total = sentimentScoreEn + sentimentScoreSv
-    let score = Math.round(total * 10000)
-    if (score > 500) score = 500
-    if (score < -500) score = -500
-    data[city.name] = score
+    let total = (sentimentScoreEn + sentimentScoreSv) * 10000
+    if (total > 500) total = 500
+    if (total < -500) total = -500
+    let colourMappedScore = Math.round(colourMap(total))
+    data[city.name] = colourMappedScore
+    console.log(colourMappedScore)
   }
   fs.writeFileSync('sentiment.json', JSON.stringify(data))
 }
 
+function colourMap(input) {
+  const outputStart = -255
+  const slope = 0.51
+  return outputStart + slope * (input - -500)
+}
 generateSentimentForAllCities(cities)
