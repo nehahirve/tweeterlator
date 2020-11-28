@@ -1,5 +1,9 @@
 $background: #000;
 $accent: #29abe2;
+$colour1: linen;
+$colour2: linen;
+$colour3: linen;
+$colour4: linen;
 
 body {
   position: relative;
@@ -10,7 +14,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
+  //overflow: hidden;
+}
+
+button,
+p {
+  font-family: 'IBM Plex Mono';
 }
 
 nav {
@@ -26,15 +35,14 @@ main {
   // border: coral solid 2px;
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: 'map graph graph';
+  display: block;
 }
 
 .map-container {
   height: 100%;
   position: relative;
-  grid-area: map;
+  width: 34%;
+  float: left;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -42,11 +50,10 @@ main {
 }
 
 .graph-container {
-  position: relative;
-  // height: 100%;
-  grid-area: graph;
-
-  // border: 1px solid limegreen;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 1px solid limegreen;
   div {
     display: flex;
     align-items: center;
@@ -95,6 +102,7 @@ main {
 }
 
 .background-map {
+  z-index: 1000;
   position: relative;
   height: 100%;
   width: fit-content;

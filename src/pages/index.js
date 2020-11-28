@@ -21,6 +21,7 @@ export default function Home() {
   ]
 
   function toggleAboutText() {
+    console.log(graphVisible)
     setAboutText(!aboutText)
     setGraphVisible(!graphVisible)
   }

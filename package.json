@@ -20,6 +20,7 @@
     "cytoscape-fcose": "^1.2.3",
     "d3-force": "^2.1.1",
     "ez-markov": "^1.2.1",
+    "fontsource-ibm-plex-mono": "^3.0.9",
     "gatsby": "^2.25.3",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "moxy-ta": "^1.0.2",
