@@ -9,7 +9,7 @@ body {
 }
 
 button,
-p, .sentiment-gradient {
+p, span {
   font-family: 'IBM Plex Mono';
 }
 
@@ -50,29 +50,27 @@ main {
 
 .sentiment-gradient {
   position: absolute;
-  left: 8rem;
-  top: 4vh;
-  width: 4rem;
-  height: 0.6rem;
-  background: linear-gradient(45deg, #57cee4, #ef4d97);
+  right: 0rem;
+  top: 20vh;
+  height: 16.5rem;
+  padding: 1.8rem 0 0;
   z-index: 9999;
-}
-
-.sentiment-gradient::before {
-  content: 'Positive';
-  position: absolute;
-  left: -4rem;
-}
-
-.sentiment-gradient::after {
-  content: 'Negative';
-  position: absolute;
-  right: -4rem;
-}
-
-.sentiment-gradient::before, .sentiment-gradient::after {
+  text-align: center;
   font-size: 0.8rem;
-  top: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sentiment-bar {
+  width: 0.5rem;
+  height: 8rem;
+  background: linear-gradient(45deg, #57cee4, #ef4d97);
+}
+
+.sentiment-gradient .positive, .sentiment-gradient .negative {
+  transform: rotate(-90deg);
+  text-shadow: 1px 1px 0 #f4f1e3, -1px -1px 0 #f4f1e3, 1px -1px 0 #f4f1e3, -1px 1px 0 #f4f1e3, 1px 1px 0 #f4f1e3;
 }
 
 .about-text-wrapper {
