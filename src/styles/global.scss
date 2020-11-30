@@ -18,7 +18,7 @@ body {
 }
 
 button,
-p {
+p, .sentiment-gradient {
   font-family: 'IBM Plex Mono';
 }
 
@@ -59,6 +59,31 @@ main {
     align-items: center;
   }
 }
+
+.sentiment-gradient{
+  position: absolute;
+  left: 8rem;
+  top: 4vh;
+  width: 4rem;
+  height: 0.6rem;
+  background: linear-gradient(45deg, $colour1, $colour2);
+  z-index: 9999;
+}
+.sentiment-gradient::before{
+  content: 'Positive';
+  position: absolute;
+  left: - 4rem;
+}
+.sentiment-gradient::after{
+  content: 'Negative';
+  position: absolute;
+  right: - 4rem;
+}
+.sentiment-gradient::before, .sentiment-gradient::after{
+  font-size: 0.8rem;
+  top: 0rem;
+}
+
 
 .about-text-wrapper {
   // border: 10px solid green;

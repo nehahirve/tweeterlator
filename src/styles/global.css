@@ -1,1 +1,163 @@
-body{position:relative;background:#f4f1e3;height:100vh;width:100vw;display:flex;flex-direction:column;justify-content:center}button,p{font-family:'IBM Plex Mono'}nav{z-index:1000;position:absolute;top:0;right:0}main{position:relative;width:100%;height:100vh;display:block}.map-container{height:100%;position:relative;width:34%;float:left;display:flex;justify-content:flex-end;align-items:center}.graph-container{position:absolute;height:100%;width:100%}.graph-container div{display:flex;align-items:center}.about-text-wrapper{position:absolute;display:flex;justify-content:center;align-items:center;right:0;top:0;height:100vh;width:calc(100vw / 3 * 2)}.about-text{background-color:#f4f1e3;border:solid 3px;border-radius:2%;border-image-source:linear-gradient(45deg, #57cee4, #ef4d97);border-image-slice:1;height:400px;max-width:500px;transform:translateY(-20%);color:#000;padding:1rem;background-clip:padding-box}.about-button{border:1px solid #000;height:1.6rem;cursor:pointer;background:#f4f1e3;color:#000;margin:2rem;padding:0 1rem 0 1rem;border-radius:3px}.about-button:hover{transform:scale(1.3);transition:500ms}.about-button:focus{outline:none}.background-map{z-index:1000;position:relative;height:100%;width:fit-content;display:flex;align-items:center;justify-content:center}.background-map img{height:95%}.background-map button{border:1px solid #000;height:1.6rem;cursor:pointer;position:absolute;background:#f4f1e3;color:#000;padding:0 1rem 0 1rem;border-radius:3px}.background-map button:hover{transform:scale(1.3);transition:500ms}.background-map button:focus{outline:none}.background-map button .green{background:green}.vis-network:focus{outline:none}
+body {
+  position: relative;
+  background: #f4f1e3;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button,
+p, .sentiment-gradient {
+  font-family: 'IBM Plex Mono';
+}
+
+nav {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+.map-container {
+  height: 100%;
+  position: relative;
+  width: 34%;
+  float: left;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.graph-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.graph-container div {
+  display: flex;
+  align-items: center;
+}
+
+.sentiment-gradient {
+  position: absolute;
+  left: 8rem;
+  top: 4vh;
+  width: 4rem;
+  height: 0.6rem;
+  background: linear-gradient(45deg, #57cee4, #ef4d97);
+  z-index: 9999;
+}
+
+.sentiment-gradient::before {
+  content: 'Positive';
+  position: absolute;
+  left: -4rem;
+}
+
+.sentiment-gradient::after {
+  content: 'Negative';
+  position: absolute;
+  right: -4rem;
+}
+
+.sentiment-gradient::before, .sentiment-gradient::after {
+  font-size: 0.8rem;
+  top: 0rem;
+}
+
+.about-text-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: calc(100vw / 3 * 2);
+}
+
+.about-text {
+  background-color: #f4f1e3;
+  border: solid 3px;
+  border-radius: 2%;
+  border-image-source: linear-gradient(45deg, #57cee4, #ef4d97);
+  border-image-slice: 1;
+  height: 400px;
+  max-width: 500px;
+  transform: translateY(-20%);
+  color: #000;
+  padding: 1rem;
+  background-clip: padding-box;
+}
+
+.about-button {
+  border: 1px solid #000;
+  height: 1.6rem;
+  cursor: pointer;
+  background: #f4f1e3;
+  color: #000;
+  margin: 2rem;
+  padding: 0 1rem 0 1rem;
+  border-radius: 3px;
+}
+
+.about-button:hover {
+  transform: scale(1.3);
+  transition: 500ms;
+}
+
+.about-button:focus {
+  outline: none;
+}
+
+.background-map {
+  z-index: 1000;
+  position: relative;
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-map img {
+  height: 95%;
+}
+
+.background-map button {
+  border: 1px solid #000;
+  height: 1.6rem;
+  cursor: pointer;
+  position: absolute;
+  background: #f4f1e3;
+  color: #000;
+  padding: 0 1rem 0 1rem;
+  border-radius: 3px;
+}
+
+.background-map button:hover {
+  transform: scale(1.3);
+  transition: 500ms;
+}
+
+.background-map button:focus {
+  outline: none;
+}
+
+.background-map button .green {
+  background: green;
+}
+
+.vis-network:focus {
+  outline: none;
+}
