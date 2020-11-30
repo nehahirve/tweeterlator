@@ -87,6 +87,7 @@ export default class VisGraph extends React.Component {
       title: this.props.station,
       value: 10,
       length: 1000,
+      color: colors.black,
     }
 
     let newData = Object.assign({}, data[this.props.station.toLowerCase()])
@@ -113,7 +114,7 @@ export default class VisGraph extends React.Component {
   }
 
   selectLabel(values) {
-    values.color = colors.black
+    values.size = 80
   }
 
   render() {
@@ -166,25 +167,13 @@ export default class VisGraph extends React.Component {
       },
     }
 
-    if (this.props.isOpen) {
-      return (
-        <Graph
-          graph={this.state.graph}
-          options={options}
-          events={this.events}
-          getNetwork={network => (this.network = network)}
-        />
-      )
-    } else {
-      return (
-        <Graph
-          graph={this.state.graph}
-          options={options}
-          events={this.events}
-          className="hidden"
-          getNetwork={network => (this.network = network)}
-        />
-      )
-    }
+    return (
+      <Graph
+        graph={this.state.graph}
+        options={options}
+        events={this.events}
+        getNetwork={network => (this.network = network)}
+      />
+    )
   }
 }

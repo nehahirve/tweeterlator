@@ -26,16 +26,36 @@ function generateGraph(city) {
 
   // REMOVE STOPWORDS
   let customStopWords = [
-    "rt", ",", "=", "-", "--", "'", "o", "it", "ghez", "...", "10",
-    ")", "…", "–", "من", "a", "و", "i", "از", "ve", "m…", "a…", "the…"
-]
+    'rt',
+    ',',
+    '=',
+    '-',
+    '--',
+    "'",
+    'o',
+    'it',
+    'ghez',
+    '...',
+    '10',
+    ')',
+    '…',
+    '–',
+    'من',
+    'a',
+    'و',
+    'i',
+    'از',
+    've',
+    'm…',
+    'a…',
+    'the…',
+  ]
 
   let swedish = sw.removeStopwords(condensedText.split(' '), sw.sv)
   let english = sw.removeStopwords(swedish, sw.en)
   let custom = sw.removeStopwords(english, customStopWords).join(' ')
-  
+
   let trimmed = CharacterRemover.removeOnly(custom, [')', '…', ';'])
-  console.log(trimmed)
 
   const ta = new MoxyTA(trimmed)
   let frequencyData = ta.scan().wordFrequency
@@ -58,7 +78,7 @@ function generateGraph(city) {
     return topWords
   }
 
-  const topWords = createDictionaryofTopWords(3)
+  const topWords = createDictionaryofTopWords(5)
 
   const newNodes = []
 
