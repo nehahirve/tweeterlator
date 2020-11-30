@@ -15,6 +15,7 @@ export default class VisGraph extends React.Component {
     this.state = {
       currentCity: this.props.station,
       graph: data[this.props.station.toLowerCase()],
+      hasInitialised: props.hasInitialised,
     }
     this.events = {
       zoom: this.keepNodeFixed,
@@ -36,6 +37,7 @@ export default class VisGraph extends React.Component {
       position: { x: 0, y: 0 },
       offset: { x: 300, y: 0 },
     })
+
     // network.fit()
     let cityPos = this.props.coords
 
@@ -69,10 +71,14 @@ export default class VisGraph extends React.Component {
   componentDidMount() {
     this.setState({ currentCity: this.props.station })
     this.addNode(this.network)
+    this.forceUpdate()
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.station !== this.props.station) {
+    if (
+      prevProps.station !== this.props.station ||
+      prevProps.hasInitialised !== this.props.hasInitialised
+    ) {
       this.setState({ currentCity: this.props.station })
       this.addNode(this.network)
     }
