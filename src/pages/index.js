@@ -11,6 +11,7 @@ export default function Home() {
   const [currentStation, setCurrentStation] = useState('Stockholm')
   const [targetX, setTargetX] = useState(0)
   const [targetY, setTargetY] = useState(0)
+  const [hasInitialised, setHasInitialised] = useState(false)
 
   const stationList = [
     { name: 'Stockholm', pos: { x: 73, y: 67.5 } },
@@ -26,6 +27,12 @@ export default function Home() {
     console.log(graphVisible)
     setAboutText(!aboutText)
     setGraphVisible(!graphVisible)
+  }
+
+  function init(coordinates, initialStation) {
+    setTargetX(coordinates.x)
+    setTargetY(coordinates.y)
+    setHasInitialised(true)
   }
 
   function updateCurrentStation(e) {
@@ -46,6 +53,7 @@ export default function Home() {
       <main>
         <section className="map-container">
           <Map
+            onInit={init}
             stationList={stationList}
             onClick={updateCurrentStation}
             clickedStation={currentStation}
@@ -56,6 +64,7 @@ export default function Home() {
             station={currentStation}
             coords={{ x: targetX, y: targetY }}
             isOpen={graphVisible}
+            hasInitialised={hasInitialised}
           />
         </section>
       </main>

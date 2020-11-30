@@ -5,6 +5,34 @@ import sentimentData from '../../static/data_sentiment.json'
 //import 'react-vis/dist/style.css'
 import colors from '../../static/colours.json'
 
+function rgbStringToRgbObject(c1) {
+  c1 = c1.slice(4, -1).split(',')
+  return {
+    r: +c1[0],
+    g: +c1[1],
+    b: +c1[2],
+  }
+}
+
+function createGradient(c1, c2) {
+  c1 = rgbStringToRgbObject(c1)
+  c2 = rgbStringToRgbObject(c2)
+  let gradient = []
+  for (let i = 0; i < 255; i++) {
+    let r = c1.r + (i * (c2.r - c1.r)) / 255
+    let g = c1.g + (i * (c2.g - c1.g)) / 255
+    let b = c1.b + (i * (c2.b - c1.b)) / 255
+    gradient.push({ r, g, b })
+  }
+  return gradient.map(color => {
+    return `rgb(${Math.round(color.r)}, ${Math.round(color.g)}, ${Math.round(
+      color.b
+    )})`
+  })
+}
+
+const gradient = createGradient(colors.color1, colors.color2)
+
 export default class VisGraph extends React.Component {
   constructor(props) {
     super(props)
@@ -15,6 +43,7 @@ export default class VisGraph extends React.Component {
     this.state = {
       currentCity: this.props.station,
       graph: data[this.props.station.toLowerCase()],
+      hasInitialised: props.hasInitialised,
     }
     this.events = {
       zoom: this.keepNodeFixed,
@@ -36,6 +65,7 @@ export default class VisGraph extends React.Component {
       position: { x: 0, y: 0 },
       offset: { x: 300, y: 0 },
     })
+
     // network.fit()
     let cityPos = this.props.coords
 
@@ -69,10 +99,14 @@ export default class VisGraph extends React.Component {
   componentDidMount() {
     this.setState({ currentCity: this.props.station })
     this.addNode(this.network)
+    this.forceUpdate()
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.station !== this.props.station) {
+    if (
+      prevProps.station !== this.props.station ||
+      prevProps.hasInitialised !== this.props.hasInitialised
+    ) {
       this.setState({ currentCity: this.props.station })
       this.addNode(this.network)
     }
@@ -85,7 +119,7 @@ export default class VisGraph extends React.Component {
   render() {
     const sentiment = sentimentData[this.props.station.toLowerCase()]
 
-    const moodColor = sentiment > 0 ? colors.color1 : colors.color2 + 'aa'
+    const moodColor = gradient[sentiment - 1]
 
     const options = {
       autoResize: true,
@@ -115,7 +149,6 @@ export default class VisGraph extends React.Component {
         color: {
           color: moodColor,
           highlight: colors.black,
-
           inherit: 'from',
           opacity: 1.0,
         },

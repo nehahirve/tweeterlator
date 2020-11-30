@@ -25,7 +25,7 @@ function generateSentimentForAllCities(cities) {
 }
 
 function colourMap(input) {
-  const outputStart = 0
+  const outputStart = 1
   const outputEnd = 255
   const inputStart = -500
   const inputEnd = 500
