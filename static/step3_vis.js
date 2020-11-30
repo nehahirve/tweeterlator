@@ -40,7 +40,7 @@ function generateGraph(city) {
     ')',
     '…',
     '–',
-    'من',
+    // 'من',
     'a',
     'و',
     'i',
@@ -57,12 +57,12 @@ function generateGraph(city) {
 
   let trimmed = CharacterRemover.removeOnly(custom, [')', '…', ';'])
 
-  const ta = new MoxyTA(trimmed)
+  const ta = new MoxyTA(custom)
   let frequencyData = ta.scan().wordFrequency
   // CREATE MARKOV CHAIN
   const chain = new Markov()
 
-  chain.addCorpus(trimmed)
+  chain.addCorpus(custom)
   const graph = chain.export()
 
   // FILTER OUT THE GRAPH TO ONLY INCLUDE TOP WORDS

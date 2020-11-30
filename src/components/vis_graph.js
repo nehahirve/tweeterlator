@@ -40,6 +40,7 @@ export default class VisGraph extends React.Component {
     this.selectLabel = this.selectLabel.bind(this)
     this.addNode = this.addNode.bind(this)
     this.keepNodeFixed = this.keepNodeFixed.bind(this)
+    this.scaleNode = this.scaleNode.bind(this)
     this.state = {
       currentCity: this.props.station,
       graph: data[this.props.station.toLowerCase()],
@@ -48,6 +49,15 @@ export default class VisGraph extends React.Component {
     this.events = {
       zoom: this.keepNodeFixed,
       dragging: this.keepNodeFixed,
+    }
+  }
+
+  scaleNode(min, max, total, value) {
+    if (max === min) {
+      return 0.5
+    } else {
+      var scale = 1 / (max - min)
+      return Math.max(0, (value - min) * scale)
     }
   }
 
@@ -142,6 +152,15 @@ export default class VisGraph extends React.Component {
         },
         font: { color: colors.black, size: 40, face: 'IBM Plex Mono' },
         shape: 'dot',
+        scaling: {
+          min: 1,
+          max: 60,
+
+          // customScalingFunction: function (min, max, total, value) {
+          //   let scale = 1 / (max - min)
+          //   return Math.pow(value, 2) * scale
+          // },
+        },
       },
       edges: {
         arrows: {
