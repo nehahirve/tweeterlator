@@ -19,14 +19,18 @@ function generateSentimentForAllCities(cities) {
     if (total < -500) total = -500
     let colourMappedScore = Math.round(colourMap(total))
     data[city.name] = colourMappedScore
-    console.log(colourMappedScore)
+    console.log(city.name, colourMappedScore)
   }
   fs.writeFileSync('data_sentiment.json', JSON.stringify(data))
 }
 
 function colourMap(input) {
-  const outputStart = -255
-  const slope = 0.51
-  return outputStart + slope * (input - -500)
+  const outputStart = 0
+  const outputEnd = 255
+  const inputStart = -500
+  const inputEnd = 500
+  const slope = (outputEnd - outputStart) / (inputEnd - inputStart)
+  return outputStart + slope * (input - inputStart)
 }
+
 generateSentimentForAllCities(cities)
