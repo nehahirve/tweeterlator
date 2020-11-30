@@ -4,6 +4,7 @@ import Map from '../components/map'
 import AboutButton from '../components/about_button'
 import AboutText from '../components/about_text'
 import VisGraph from '../components/vis_graph'
+import SentimentGradient from '../components/sentiment_gradient'
 
 export default function Home() {
   const [aboutText, setAboutText] = useState(false)
@@ -60,6 +61,7 @@ export default function Home() {
           />
         </section>
         <section className="graph-container">
+          <SentimentGradient isOpen={graphVisible}/>
           <VisGraph
             station={currentStation}
             coords={{ x: targetX, y: targetY }}
