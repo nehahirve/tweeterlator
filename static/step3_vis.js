@@ -3,6 +3,8 @@ const MoxyTA = require('moxy-ta') // word frequency analyser
 const Markov = require('ez-markov') // creates a markov graph
 const fs = require('fs')
 const sw = require('stopword') // removes common words
+const CharacterRemover = require('character-remover') //Character Remover
+
 const data = {}
 
 const cities = require('./seed.json')
@@ -23,18 +25,24 @@ function generateGraph(city) {
   let condensedText = TextCleaner(text).condense().valueOf()
 
   // REMOVE STOPWORDS
-  let customStopWords = ['rt', ',', '=', '-', '--', "'"]
+  let customStopWords = [
+    "rt", ",", "=", "-", "--", "'", "o", "it", "ghez", "...", "10",
+    ")", "…", "–", "من", "a", "و", "i", "از", "ve", "m…", "a…", "the…"
+]
 
   let swedish = sw.removeStopwords(condensedText.split(' '), sw.sv)
   let english = sw.removeStopwords(swedish, sw.en)
   let custom = sw.removeStopwords(english, customStopWords).join(' ')
-  const ta = new MoxyTA(custom)
-  let frequencyData = ta.scan().wordFrequency
+  
+  let trimmed = CharacterRemover.removeOnly(custom, [')', '…', ';'])
+  console.log(trimmed)
 
+  const ta = new MoxyTA(trimmed)
+  let frequencyData = ta.scan().wordFrequency
   // CREATE MARKOV CHAIN
   const chain = new Markov()
 
-  chain.addCorpus(custom)
+  chain.addCorpus(trimmed)
   const graph = chain.export()
 
   // FILTER OUT THE GRAPH TO ONLY INCLUDE TOP WORDS
