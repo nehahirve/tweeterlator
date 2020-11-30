@@ -1,8 +1,11 @@
-$background: #000;
-$accent: #29abe2;
+$background: #f4f1e3;
+$accent: #000;
+$colour1: #57cee4;
+$colour2: #ef4d97;
+$colour3: linen;
+$colour4: linen;
 
 body {
-  
   position: relative;
   background: $background;
   height: 100vh;
@@ -11,43 +14,45 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
+  //overflow: hidden;
+}
+
+button,
+p {
+  font-family: 'IBM Plex Mono';
 }
 
 nav {
   z-index: 1000;
-    position: absolute;
-    // border: blue solid 2px;
-    top: 0;
-    right: 0;
+  position: absolute;
+  // border: blue solid 2px;
+  top: 0;
+  right: 0;
 }
 
 main {
- 
-    position: relative;
-    // border: coral solid 2px;
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 'map graph graph';
+  position: relative;
+  // border: coral solid 2px;
+  width: 100%;
+  height: 100vh;
+  display: block;
 }
 
 .map-container {
-    height: 100%;
-    position: relative;
-    grid-area: map;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    // border: 4px solid orange;
+  height: 100%;
+  position: relative;
+  width: 34%;
+  float: left;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  // border: 4px solid orange;
 }
 
 .graph-container {
-  position: relative;
-  // height: 100%;
-  grid-area: graph;
-  
+  position: absolute;
+  height: 100%;
+  width: 100%;
   // border: 1px solid limegreen;
   div {
     display: flex;
@@ -56,7 +61,7 @@ main {
 }
 
 .about-text-wrapper {
-  // border: 10px solid white;
+  // border: 10px solid green;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -64,41 +69,43 @@ main {
   right: 0;
   top: 0;
   height: 100vh;
-  width: calc(100vw / 3 * 2)
+  width: calc(100vw / 3 * 2);
 }
 
 .about-text {
   background-color: $background;
-  border: 3px solid $accent;
+  border: solid 3px;
   border-radius: 2%;
+  border-image-source: linear-gradient(45deg, $colour1, $colour2);
+  border-image-slice: 1;
   height: 400px;
-  max-width: 400px;
+  max-width: 500px;
   transform: translateY(-20%);
   color: $accent;
   padding: 1rem;
+  background-clip: padding-box;
 }
 
-
-
 .about-button {
-    border:1px solid $accent;
-    height:1.6rem;
-    cursor: pointer;
-      background: $background;
-      color: $accent;
-      margin: 2rem;
-      padding: 0 1rem 0 1rem;
-      border-radius: 3px;
-      &:hover {
-        transform: scale(1.3);
-        transition: 500ms;
-      }
-      &:focus {
-        outline: none;
-      }
+  border: 1px solid $accent;
+  height: 1.6rem;
+  cursor: pointer;
+  background: $background;
+  color: $accent;
+  margin: 2rem;
+  padding: 0 1rem 0 1rem;
+  border-radius: 3px;
+  &:hover {
+    transform: scale(1.3);
+    transition: 500ms;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 .background-map {
+  z-index: 1000;
   position: relative;
   height: 100%;
   width: fit-content;
@@ -110,10 +117,9 @@ main {
   }
 
   button {
-
-    border:1px solid $accent;
-  height:1.6rem;
-  cursor: pointer;
+    border: 1px solid $accent;
+    height: 1.6rem;
+    cursor: pointer;
     position: absolute;
     background: $background;
     color: $accent;
@@ -128,7 +134,12 @@ main {
     }
     .green {
       background: green;
-    } 
+    }
   }
-  
+}
+
+.vis-network {
+  &:focus {
+    outline: none;
+  }
 }

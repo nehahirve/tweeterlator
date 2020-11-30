@@ -4,7 +4,7 @@ import ToggleableButton from '../components/toggleable_button'
 export default function ButtonList(props) {
   function handleButtonClick(e) {
     let clickedStation = e.target.innerText
-    props.onClick(clickedStation)
+    props.onClick(e)
   }
 
   const stations = props.stationList.map((station, index) => {
