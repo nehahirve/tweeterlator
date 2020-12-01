@@ -111,21 +111,32 @@ main {
 }
 
 .about-text-border {
-  max-width: 30rem;
-  min-height: 30rem;
-  background: linear-gradient($colour2, $colour2);
-  transform: translateY(-20%);
-  border-radius: 2%;
-}
+  display: flex;
+  align-items: center;
+  max-width: 40em;
+  height: fit-content;
+  position: relative;
+  padding: 2rem 2em;
 
-.about-text {
-  background-color: $background;
-  border-radius: inherit;
-  margin: auto;
-  width: 90%;
-  height: 80%;
+  $border: 5px;
   color: $accent;
-  padding: 1.7rem;
+  background: $background;
+  background-clip: padding-box; /* !importanté */
+  border: solid $border transparent; /* !importanté */
+  border-radius: 1em;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    background: linear-gradient(to right, $colour1, $colour2);
+  }
 }
 
 .github-link {
