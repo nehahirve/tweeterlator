@@ -12,8 +12,10 @@ TweetLator was born during a brainstorming session for a school project at Hyper
 
 **Data collection method:**
 
-// api
+// api 
+
 // node
+
 // sentiment analysis
 
 **Things we learned:**
@@ -21,6 +23,7 @@ TweetLator was born during a brainstorming session for a school project at Hyper
 **Some of the challenges we faced:**
 
 // cors - we couldn’t collect data at fetch time, hence we decided to do it at build time once a week through a series of node scripts.
+
 // we tried to use cytoscape.js
 
 
