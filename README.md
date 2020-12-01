@@ -6,29 +6,44 @@
 #### A Hyper Island Student Project
 
 **About:**
-Using Twitter API, TweetLator is an app that fetches tweets from users in various cities around Sweden, and visualizes their content based on word frequency analysis, sentiment analysis, and Markov chains.
+TweeterLator is an app that fetches tweets from users in various cities around Sweden, and visualizes their content based on word frequency analysis, sentiment analysis, and Markov chains.
 
-TweetLator was born during a brainstorming session for a school project at Hyper Island. For the three-week-long project, we decided to blend our brief (building a webpage using RESTful APIs) with our interest in data visualization and graphs. Therefore, working with Twitter API and analyzing their users' content seemed a compelling territory to explore despite being an intact challenge for all of us.
+TweeterLator was born during a brainstorming session for a school project at Hyper Island. For the three-week-long project, we decided to blend our brief (building a webpage using RESTful APIs) with our interest in data visualization and graphs. Therefore, working with Twitter API and analyzing their users' content seemed like compelling territory to explore.
 
-**Data collection method:**
+**Data collection and analysis:**
 
-// api 
+We started with exploring Twitter API and the types of data we could fetch. We limited our sample size to the 500 most recent tweets from each city within a 5km radius from a given set of geographical coordinates. 
 
-// node
+We wanted to visualise the text contents of the tweets in some kind of network graph. To do this, we anaylised our corpus with three different approaches. 
 
-// sentiment analysis
+We created a simple token frequency dictionary to visualise the most-occuring words, usernames and hashtags in a particular city. These formed the nodes in our graph.
+
+Second, we used a Markov Chain analysis to map frequently occurring bigrams (after the stopwords were removed, so these ended up being words that occurred close together) to graph edges. The more frequent the connection, the heavier the edge.
+
+We also ran a simple sentiment analysis script using an AFINN score that we mapped onto a colour gradient in order to colour the graph. 
+
+*Exploring some of these libraries for the purpose of analyzing text-based content in this project was to experiment with new tools in the field of front-end development. We are front-end developers, not data analysts (although with some background knowledge of linguistics), and it’s likely that we have overlooked some of the nuances of data collection and potential biases.*
+
 
 **Things we learned:**
 
+- Working with API
+- Building an app with Gatsby
+- Graphing data
+- Working in Nodejs
+- Thinking in terms of React Components
+- Collaborating with Agile principles
+
 **Some of the challenges we faced:**
 
-// cors - we couldn’t collect data at fetch time, hence we decided to do it at build time once a week through a series of node scripts.
+We couldn’t collect data at fetch time, hence we decided to do it at build time once a week through a series of node scripts.
+Our initial intention was to fetch data at runtime, but we eventually learned that Twitter doesn't support CORS and therefore we couldn't access the API from the client. Instead we decided to fetch the data periodically at built-time running a Node script in the backend. Since we moved to backend, we analyzed most of the data in Node as well.
 
-// we tried to use cytoscape.js
+Initially we spent a few days researching graph visualising libraries, and settled on Cytoscape.js. It proved to be very complicated to work with, especially with the added complexity of finding a good React wrapper, and Vis.js had much clearer documentation, and nice physics simulations out of the package.  
 
+We didn't examine our data closely in the start of the project, and didn't realize that we were getting truncated tweets. This caused a lot of bugs and lost time towards the end of the project.
 
-Exploring some of these libraries for the purpose of analyzing text-based content in this project was to experiment with new tools in the field of front-end development. We are front-end developers, not data analysts (although with some background knowledge of linguistics), and it’s likely that we have overlooked some of the nuances of data collection and potential biases.
-
+Overall, we were working with a lot of tools and concepts that were new to all of us, so we were constantly challenged.
 
 
 **Tools and Tech stack:**
@@ -38,6 +53,8 @@ Exploring some of these libraries for the purpose of analyzing text-based conten
 [Twitter API:](https://developer.twitter.com/en/docs/twitter-api) “The API provides the tools analyze the conversation happening on Twitter.” *In order to use, developer must request access by filling out a questionnaire.*
 
 [Vis.js:](https://visjs.org/) "A dynamic, browser-based visualization library."
+
+[Postman:](https://www.postman.com/) "The Collaboration Platform for API Development."
 
 **Libraries and dependencies:**
 
@@ -56,14 +73,10 @@ Exploring some of these libraries for the purpose of analyzing text-based conten
 [Sentiment Swedish:](https://www.npmjs.com/package/sentiment-swedish) Swedish translated, AFINN-based sentiment analysis for Node.js.
 
 
-**Sources and Inspirations:**
-
-
-
 
 **Contributors:**
 
-- [Lovisa Elensky]()
-- [Neha Hirve]()
-- [Omid Haqbin]()
+- [Lovisa Elensky](https://github.com/lovisaelensky)
+- [Neha Hirve](https://github.com/nehahirve/)
+- [Omid Haqbin](https://github.com/omidhq/)
 

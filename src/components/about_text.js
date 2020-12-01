@@ -7,13 +7,13 @@ export default function AboutText(props) {
         <div className="about-text-border">
           <div className="about-text">
             <p>
-              Using Twitter API, TweetLator is an app that fetches tweets from
+            TweeterLator is an app that fetches tweets from
               users in various cities around Sweden, and visualizes their
               content based on word frequency analysis, sentiment analysis, and
               Markov chains.
             </p>
             <p>
-              TweetLator was born during a brainstorming session for a school
+            TweeterLator was born during a brainstorming session for a school
               project at{' '}
               <a href="https://www.hyperisland.com/" target="_blank">
                 Hyper Island
@@ -21,8 +21,8 @@ export default function AboutText(props) {
               . For the three-week-long project, we decided to blend our brief
               (building a webpage using RESTful APIs) with our interest in data
               visualization and graphs. Therefore, working with Twitter API and
-              analyzing their users' content seemed a compelling territory to
-              explore despite being an intact challenge for all of us.
+              analyzing their users' content seemed like compelling territory to
+              explore.
             </p>
 
             <a
