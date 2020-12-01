@@ -64,7 +64,7 @@ main {
 
 .sentiment-gradient {
   position: absolute;
-  right: 0rem;
+  right: 1rem;
   top: 20vh;
   height: 16.5rem;
   padding: 1.8rem 0 0;
@@ -83,7 +83,7 @@ main {
 }
 
 .sentiment-gradient .positive, .sentiment-gradient .negative {
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
   text-shadow: 1px 1px 0 #f4f1e3, -1px -1px 0 #f4f1e3, 1px -1px 0 #f4f1e3, -1px 1px 0 #f4f1e3, 1px 1px 0 #f4f1e3;
 }
 
