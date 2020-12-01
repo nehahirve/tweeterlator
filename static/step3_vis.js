@@ -1,5 +1,4 @@
 const TextCleaner = require('text-cleaner') // tool to clean up text
-const MoxyTA = require('moxy-ta') // word frequency analyser
 const Markov = require('ez-markov') // creates a markov graph
 const fs = require('fs')
 const sw = require('stopword') // removes common words
@@ -71,10 +70,9 @@ function generateGraph(city) {
   let joined = cleaned.join(' ')
   fs.writeFileSync('test.txt', joined)
 
-  const ta = new MoxyTA(joined)
+  let frequencyData = createDictionary(joined)
+  console.log(frequencyData)
 
-  let frequencyData = ta.scan().wordFrequency
-  fs.writeFileSync('test.txt', JSON.stringify(ta))
   // CREATE MARKOV CHAIN
   const chain = new Markov()
 
@@ -168,3 +166,16 @@ function generateGraph(city) {
 }
 
 // fs.writeFileSync('data_vis.json', JSON.stringify(visData))
+
+function createDictionary(string) {
+  const array = string.split(' ')
+  const dict = {}
+  array.forEach(word => {
+    if (dict[word]) {
+      dict[word].frequency++
+    } else {
+      dict[word] = { frequency: 1 }
+    }
+  })
+  return dict
+}
