@@ -11,6 +11,7 @@ Using Twitter API, TweetLator is an app that fetches tweets from users in variou
 TweetLator was born during a brainstorming session for a school project at Hyper Island. For the three-week-long project, we decided to blend our brief (building a webpage using RESTful APIs) with our interest in data visualization and graphs. Therefore, working with Twitter API and analyzing their users' content seemed a compelling territory to explore despite being an intact challenge for all of us.
 
 **Data collection method:**
+
 // api
 // node
 // sentiment analysis
