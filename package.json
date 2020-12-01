@@ -35,6 +35,7 @@
     "sentiment": "^5.0.2",
     "sentiment-swedish": "^1.1.0",
     "stopword": "^1.0.3",
+    "stripchar": "^1.2.1",
     "text-cleaner": "^1.2.1",
     "vis-network": "^8.5.4"
   },

@@ -3,7 +3,6 @@ const MoxyTA = require('moxy-ta') // word frequency analyser
 const Markov = require('ez-markov') // creates a markov graph
 const fs = require('fs')
 const sw = require('stopword') // removes common words
-const CharacterRemover = require('character-remover') //Character Remover
 
 const data = {}
 
@@ -22,7 +21,18 @@ function generateGraph(city) {
     .readFileSync(`TEXTDATA/${city.name}.txt`)
     .toString()
     .toLowerCase()
-  let condensedText = TextCleaner(text).condense().valueOf()
+
+  let characterArray = text.split('')
+  const badChars = ['…', '(', ')', ',', '*']
+  let stripped = characterArray.map(char => {
+    if (badChars.includes(char)) {
+      return ''
+    } else {
+      return char
+    }
+  })
+
+  let condensedText = TextCleaner(stripped.join('')).condense().valueOf()
 
   // REMOVE STOPWORDS
   let customStopWords = [
@@ -32,30 +42,23 @@ function generateGraph(city) {
     '-',
     '--',
     "'",
-    'o',
+    't',
     'it',
     'ghez',
     '...',
     '10',
-    ')',
-    '…',
     '–',
-    // 'من',
+    'من',
     'a',
     'و',
     'i',
     'از',
     've',
-    'm…',
-    'a…',
-    'the…',
   ]
 
   let swedish = sw.removeStopwords(condensedText.split(' '), sw.sv)
   let english = sw.removeStopwords(swedish, sw.en)
   let custom = sw.removeStopwords(english, customStopWords).join(' ')
-
-  let trimmed = CharacterRemover.removeOnly(custom, [')', '…', ';'])
 
   const ta = new MoxyTA(custom)
   let frequencyData = ta.scan().wordFrequency
@@ -147,7 +150,7 @@ function generateGraph(city) {
     }
     visData.edges.push(dataObj)
   }
-  console.log(city)
+
   data[city.name] = visData
 }
 

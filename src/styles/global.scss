@@ -110,18 +110,24 @@ main {
   width: calc(100vw / 3 * 2);
 }
 
+.about-text-border {
+  max-width: 30rem;
+  min-height: 30rem;
+  background: linear-gradient($colour2, $colour2);
+  transform: translateY(-20%);
+  border-radius: 2%;
+}
+
 .about-text {
   background-color: $background;
-  border: solid 3px;
-  border-radius: 2%;
-  border-image-source: linear-gradient(45deg, $colour1, $colour2);
-  border-image-slice: 1;
-  max-width: 500px;
-  transform: translateY(-20%);
+  border-radius: inherit;
+  margin: auto;
+  width: 90%;
+  height: 80%;
   color: $accent;
   padding: 1.7rem;
-  background-clip: padding-box;
 }
+
 .github-link {
   line-height: 2;
   padding: 0.3rem 0 0.2rem;
