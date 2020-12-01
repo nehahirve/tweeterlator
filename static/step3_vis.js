@@ -3,9 +3,7 @@ const MoxyTA = require('moxy-ta') // word frequency analyser
 const Markov = require('ez-markov') // creates a markov graph
 const fs = require('fs')
 const sw = require('stopword') // removes common words
-
 const data = {}
-
 const cities = require('./seed.json')
 
 function generateGraphForAllCities(cities) {
@@ -22,6 +20,7 @@ function generateGraph(city) {
     .toString()
     .toLowerCase()
 
+  // removing characters
   let characterArray = text.split('')
 
   const badChars = ['…', '(', ')', ',', '*']
@@ -59,24 +58,27 @@ function generateGraph(city) {
   let custom = sw.removeStopwords(english, customStopWords).join(' ')
 
   let regExp = new RegExp(/^.$/)
-  let wordArray = custom.split(' ')
-  let cleaned = wordArray
-    .map(word => {
-      if (regExp.test(word)) {
-        console.log(word)
-        return ''
-      } else {
-        return word
-      }
-    })
-    .join(' ')
 
-  const ta = new MoxyTA(cleaned)
+  let wordArray = custom.split(' ')
+  let cleaned = wordArray.map(word => {
+    if (regExp.test(word)) {
+      return ''
+    } else {
+      return word
+    }
+  })
+
+  let joined = cleaned.join(' ')
+  fs.writeFileSync('test.txt', joined)
+
+  const ta = new MoxyTA(joined)
+
   let frequencyData = ta.scan().wordFrequency
+  fs.writeFileSync('test.txt', JSON.stringify(ta))
   // CREATE MARKOV CHAIN
   const chain = new Markov()
 
-  chain.addCorpus(cleaned)
+  chain.addCorpus(joined)
   const graph = chain.export()
 
   // FILTER OUT THE GRAPH TO ONLY INCLUDE TOP WORDS
