@@ -174,11 +174,18 @@ export default class VisGraph extends React.Component {
         },
       },
       layout: {
-        randomSeed: 13141231,
+        randomSeed: 1314231,
       },
       physics: {
         enabled: true,
         solver: 'repulsion',
+        repulsion: {
+          centralGravity: 0.01,
+          springLength: 300,
+          springConstant: 0.001,
+          nodeDistance: 100,
+          damping: 0.05,
+        },
       },
       interaction: {
         dragView: true,

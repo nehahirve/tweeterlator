@@ -18,4 +18,4 @@ function writePagesofTweetContenttoTextFile(pages) {
   }
 }
 
-writePagesofTweetContenttoTextFile(5)
+writePagesofTweetContenttoTextFile(10)
