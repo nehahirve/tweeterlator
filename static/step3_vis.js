@@ -165,8 +165,6 @@ function generateGraph(city) {
   data[city.name] = visData
 }
 
-// fs.writeFileSync('data_vis.json', JSON.stringify(visData))
-
 function createDictionary(string) {
   const array = string.split(' ')
   const dict = {}
