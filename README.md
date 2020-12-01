@@ -32,8 +32,11 @@ Exploring some of these libraries for the purpose of analyzing text-based conten
 
 
 **Tools and Tech stack:**
+
 [Gatsbyjs:](https://www.gatsbyjs.com/) “An open-source framework based on React that helps developers build blazing-fast websites and apps.”
+
 [Twitter API:](https://developer.twitter.com/en/docs/twitter-api) “The API provides the tools analyze the conversation happening on Twitter.” *In order to use, developer must request access by filling out a questionnaire.*
+
 [Vis.js:](https://visjs.org/) "A dynamic, browser-based visualization library."
 
 **Libraries and dependencies:**
