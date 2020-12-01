@@ -10,7 +10,7 @@ function writePagesofTweetContenttoTextFile(pages) {
       let data = JSON.parse(file)
       let tweets = data.statuses
       for (let tweet of tweets) {
-        text += `${tweet.text}
+        text += `${tweet.full_text}
         `
       }
     }

@@ -27,7 +27,7 @@ async function getDataForAllCities(cities) {
 async function getPagesOfTweets(startMaxId, city, pages) {
   maxId = startMaxId
   for (let i = 0; i < pages; i++) {
-    url = `https://api.twitter.com/1.1/search/tweets.json?q=geocode:${city.lat},${city.lon},${radius}km&count=100&max_id=${maxId}`
+    url = `https://api.twitter.com/1.1/search/tweets.json?q=geocode:${city.lat},${city.lon},${radius}km&count=100&max_id=${maxId}&tweet_mode=extended`
     await get100Tweets(url, options, city.name, i + 1)
   }
 }

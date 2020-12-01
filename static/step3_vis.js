@@ -23,6 +23,7 @@ function generateGraph(city) {
     .toLowerCase()
 
   let characterArray = text.split('')
+
   const badChars = ['…', '(', ')', ',', '*']
   let stripped = characterArray.map(char => {
     if (badChars.includes(char)) {
@@ -42,16 +43,13 @@ function generateGraph(city) {
     '-',
     '--',
     "'",
-    't',
     'it',
     'ghez',
     '...',
     '10',
     '–',
     'من',
-    'a',
     'و',
-    'i',
     'از',
     've',
   ]
@@ -60,12 +58,25 @@ function generateGraph(city) {
   let english = sw.removeStopwords(swedish, sw.en)
   let custom = sw.removeStopwords(english, customStopWords).join(' ')
 
-  const ta = new MoxyTA(custom)
+  let regExp = new RegExp(/^.$/)
+  let wordArray = custom.split(' ')
+  let cleaned = wordArray
+    .map(word => {
+      if (regExp.test(word)) {
+        console.log(word)
+        return ''
+      } else {
+        return word
+      }
+    })
+    .join(' ')
+
+  const ta = new MoxyTA(cleaned)
   let frequencyData = ta.scan().wordFrequency
   // CREATE MARKOV CHAIN
   const chain = new Markov()
 
-  chain.addCorpus(custom)
+  chain.addCorpus(cleaned)
   const graph = chain.export()
 
   // FILTER OUT THE GRAPH TO ONLY INCLUDE TOP WORDS
