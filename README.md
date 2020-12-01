@@ -37,12 +37,19 @@ Exploring some of these libraries for the purpose of analyzing text-based conten
 [Vis.js:](https://visjs.org/) "A dynamic, browser-based visualization library."
 
 **Libraries and dependencies:**
+
 [React graph vis:](https://www.npmjs.com/package/react-graph-vis) A React component to display beautiful network graphs using vis.js
+
 [moxy-ta:](https://www.npmjs.com/package/moxy-ta) Text analysis library for MoxyScript.
+
 [text-cleaner:](https://www.npmjs.com/package/text-cleaner) A tool for easily cleaning text.
+
 [ez-markov:](https://www.npmjs.com/package/ez-markov) A library designed to build rudimentary Markov chains.
+
 [Stopword:](https://www.npmjs.com/package/stopword) A module for node and the browser that allows you to strip stopwords from an input text.
+
 [Sentiment:](https://www.npmjs.com/package/sentiment) AFINN-based sentiment analysis for Node.js.
+
 [Sentiment Swedish:](https://www.npmjs.com/package/sentiment-swedish) Swedish translated, AFINN-based sentiment analysis for Node.js.
 
 
