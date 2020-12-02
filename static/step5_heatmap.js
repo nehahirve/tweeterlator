@@ -68,6 +68,7 @@ function createSunburst(clock) {
           name: `${label}_${base.indexOf(child)}`,
           color: color,
           children: [],
+          loc: 10,
         }
       )
     }
