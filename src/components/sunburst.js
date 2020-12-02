@@ -1,23 +1,50 @@
 import React from 'react'
-import { ResponsiveSunburst } from '@nivo/sunburst'
+import { Sunburst } from '@nivo/sunburst'
 import testData from '../../static/data_sunburst.json'
+import colors from '../../static/colours.json'
+import clock from '../../static/clock.json'
 
 export default function SunburstGraph() {
+  function computeChildColour() {
+    let base = []
+    console.log(clock['malmö'])
+
+    clock['stockholm'].forEach(opacity => {
+      base.push(`rgba(87, 206, 228, ${opacity / 100} )`)
+      // console.log(opacity / 100)
+    })
+
+    console.log(base)
+    return base
+  }
+
+  function computeBaseColour() {
+    let base = []
+    console.log(clock['stockholm'])
+
+    clock['stockholm'].forEach(opacity => {
+      base.push(`rgba(87, 206, 228, ${opacity / 100} )`)
+      // console.log(opacity / 100)
+    })
+
+    return base
+  }
+
+  let baseColours = computeBaseColour()
+  let childColours = computeChildColour()
   return (
-    <ResponsiveSunburst
+    <Sunburst
       data={testData}
       height={500}
       width={500}
       identity="name"
       value="loc"
-      cornerRadius={2}
-      borderWidth={1}
-      borderColor="white"
-      childColor={{ from: 'color', modifiers: [] }}
-      animate={true}
-      motionStiffness={90}
-      motionDamping={15}
-      isInteractive={true}
+      cornerRadius={0}
+      borderWidth={5}
+      borderColor={colors.white}
+      colors={baseColours}
+      childColor={{ from: 'color', modifiers: [['opacity', 0.5]] }}
+      // isInteractive={true}
     />
   )
 }

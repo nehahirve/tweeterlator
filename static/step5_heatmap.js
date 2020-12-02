@@ -31,6 +31,36 @@ function getTimes(cityName, cityObject) {
 }
 
 let clock = createClock(database.cities)
+// console.log(Object.entries(clock).map(entry => entry[1]))
+
+let maxValue = getMaxValue(Object.entries(clock).map(entry => entry[1]))
+
+console.log(Object.entries(clock))
+
+for (let city of cityNames) {
+  clock[city.name] = clock[city.name].map(number => {
+    return colourMap(number, maxValue)
+  })
+}
+
+function getMaxValue(array) {
+  let compare = []
+  for (let item of array) {
+    compare.push(item.sort((a, b) => b - a)[0])
+  }
+  return compare.sort((a, b) => b - a)[0]
+}
+
+function colourMap(input, inputEnd) {
+  const outputStart = 0
+  const outputEnd = 100
+  const inputStart = 0
+  // const inputEnd = 500
+  const slope = (outputEnd - outputStart) / (inputEnd - inputStart)
+  return outputStart + slope * (input - inputStart)
+}
+
+fs.writeFileSync('clock.json', JSON.stringify(clock))
 
 createSunburst(clock)
 
@@ -106,7 +136,6 @@ function createSunburst(clock) {
 
   function pushUmea(base, label) {
     for (let child of base) {
-      console.log(child.children)
       child.children[0].children.push({
         name: `${label}_${base.indexOf(child)}`,
         color: color,
