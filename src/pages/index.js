@@ -76,7 +76,19 @@ export default function Home() {
             clickedStation={currentStation}
           />
         </section>
-        <section className="graph-container">
+        <section
+          className="graph-container vis-container"
+          style={{ zIndex: graph ? 3100 : 3999 }}
+        >
+          <VisGraph
+            station={currentStation}
+            coords={{ x: targetX, y: targetY }}
+            isOpen={graphVisible}
+            hasInitialised={hasInitialised}
+            graph={graph}
+          />
+        </section>
+        <section className="graph-container sunburst-container">
           <ToggleableGraph
             station={currentStation}
             visible={graph}
@@ -85,15 +97,6 @@ export default function Home() {
             key={id}
           />
           <SentimentGradient isOpen={graphVisible} graph={graph} />
-          <section className="graph-container">
-            <VisGraph
-              station={currentStation}
-              coords={{ x: targetX, y: targetY }}
-              isOpen={graphVisible}
-              hasInitialised={hasInitialised}
-              graph={graph}
-            />
-          </section>
         </section>
       </main>
       <section className="aboutText">

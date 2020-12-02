@@ -35,7 +35,7 @@ a:hover {
 }
 
 nav {
-  z-index: 1000;
+  z-index: 5000;
   position: absolute;
   // border: blue solid 2px;
   top: 0;
@@ -81,7 +81,7 @@ main {
   transform: translateY(-50%);
   height: 16.5rem;
   padding: 1.8rem 0 0;
-  z-index: 9999;
+  z-index: 5000;
   text-align: center;
   font-size: 0.8rem;
   display: flex;
@@ -189,7 +189,7 @@ main {
 }
 
 .background-map {
-  z-index: 1000;
+  z-index: 4000;
   position: relative;
   height: 100%;
   width: fit-content;
@@ -231,7 +231,7 @@ main {
 .heatmap {
   width: 66%;
   height: 100%;
-  z-index: 10000;
+  // z-index: 10000;
   float: right;
 }
 
@@ -241,4 +241,12 @@ main {
   float: right;
   display: flex;
   justify-content: center;
+}
+
+.vis-container {
+  // z-index: 4999;
+}
+
+.sunburst-container {
+  z-index: 3998;
 }

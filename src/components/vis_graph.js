@@ -132,6 +132,7 @@ export default class VisGraph extends React.Component {
 
     const moodColor = gradient[sentiment - 1]
 
+    const hide = this.props.graph || !this.props.isOpen ? true : false
     const options = {
       autoResize: true,
       width: '100%',
@@ -139,7 +140,7 @@ export default class VisGraph extends React.Component {
 
       clickToUse: true,
       nodes: {
-        hidden: this.props.graph || !this.props.isOpen ? true : false,
+        hidden: hide,
         borderWidth: 0,
         borderWidthSelected: 0,
         chosen: {
@@ -192,6 +193,8 @@ export default class VisGraph extends React.Component {
         zoomView: true,
       },
     }
+
+    const index = hide ? 3100 : 3999
 
     return (
       <Graph

@@ -101,7 +101,7 @@ export default class SunburstGraph extends React.Component {
     this.state = {
       data: updateData(),
       current: this.props.station,
-      hoveredCell: true,
+      hoveredCell: false,
     }
     this.updateKey = this.updateKey.bind(this)
     this.hover = this.hover.bind(this)
@@ -145,16 +145,14 @@ export default class SunburstGraph extends React.Component {
           strokeOpacity: 1,
           strokeWidth: '3',
         }}
-        // onValueMouseOver={v =>
-        //   this.setState({ hoveredCell: v.x && v.y ? v : false })
-        // }
-        // onValueMouseOut={v => this.setState({ hoveredCell: false })}
+        onValueMouseOver={v => console.log(v)}
+        onValueMouseOut={v => this.setState({ hoveredCell: false })}
       >
         {hoveredCell ? (
           <Hint value={buildValue(hoveredCell)}>
             <div style={tipStyle}>
               <div style={{ ...boxStyle, background: 'red' }} />
-              {hoveredCell.clr}
+              {'hello'}
             </div>
           </Hint>
         ) : null}
