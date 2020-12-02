@@ -16,6 +16,12 @@ export default function Home() {
   const [targetY, setTargetY] = useState(0)
   const [hasInitialised, setHasInitialised] = useState(false)
   const [graph, setGraph] = useState(false)
+  const [id, setId] = useState('1')
+
+  function update() {
+    console.log('updated')
+    setId(Math.random().toString())
+  }
 
   const stationList = [
     { name: 'Stockholm', pos: { x: 73, y: 67.5 } },
@@ -40,6 +46,7 @@ export default function Home() {
   }
 
   function updateCurrentStation(e) {
+    update()
     let station = e.target.innerText
     var rect = e.target.getBoundingClientRect()
     setTargetX((rect.left + rect.right) / 2)
@@ -74,6 +81,8 @@ export default function Home() {
             station={currentStation}
             visible={graph}
             isOpen={graphVisible}
+            update={update}
+            key={id}
           />
           <SentimentGradient isOpen={graphVisible} graph={graph} />
           <section className="graph-container">

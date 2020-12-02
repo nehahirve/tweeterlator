@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import colors from '../../static/colours.json'
 import SunburstGraph from '../components/sunburst_graph'
 import VisGraph from '../components/vis_graph'
@@ -9,7 +9,11 @@ export default function ToggleableGraph(props) {
     return (
       <section className="graph-container">
         <div className="sunburst">
-          <SunburstGraph station={props.station} />
+          <SunburstGraph
+            station={props.station}
+            key={props.id}
+            update={props.update}
+          />
         </div>
       </section>
     )

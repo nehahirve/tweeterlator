@@ -75,7 +75,7 @@ function createSunburst(clock) {
     for (let i = 0; i < 24; i++) {
       data.children.push({
         title: `${label}_${i}`,
-        color: `rgba(87, 206, 228, ${clock[label][i] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][i] / 100})`,
         children: [],
       })
     }
@@ -95,9 +95,7 @@ function createSunburst(clock) {
       child.children[0].children[0].children[0].children[0].children[0].children.push(
         {
           title: `${label}_${base.indexOf(child)}`,
-          color: `rgba(87, 206, 228, ${
-            clock[label][base.indexOf(child)] / 100
-          })`,
+          color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
           children: [],
           size: 10,
         }
@@ -109,7 +107,7 @@ function createSunburst(clock) {
     for (let child of base) {
       child.children[0].children[0].children[0].children[0].children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
         children: [],
       })
     }
@@ -119,7 +117,7 @@ function createSunburst(clock) {
     for (let child of base) {
       child.children[0].children[0].children[0].children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
 
         children: [],
       })
@@ -130,7 +128,7 @@ function createSunburst(clock) {
     for (let child of base) {
       child.children[0].children[0].children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
         children: [],
       })
     }
@@ -140,7 +138,7 @@ function createSunburst(clock) {
     for (let child of base) {
       child.children[0].children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
         children: [],
       })
     }
@@ -151,7 +149,7 @@ function createSunburst(clock) {
       // console.log(child)
       child.children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
         children: [],
       })
     }
