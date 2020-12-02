@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Map from '../components/map'
 import AboutButton from '../components/about_button'
 import AboutText from '../components/about_text'
-import ResponsiveSunburst from '../components/sunburst'
+import SunburstGraph from '../components/sunburst'
 
 export default function Time() {
   const [aboutText, setAboutText] = useState(false)
@@ -60,7 +60,9 @@ export default function Time() {
           />
         </section>
         <section className="graph-container">
-          <ResponsiveSunburst />
+          <div className="sunburst">
+            <SunburstGraph />
+          </div>
         </section>
       </main>
       <section className="aboutText">

@@ -1,82 +1,82 @@
 {
   "name": "nivo",
-  "color": "hsl(177, 70%, 50%)",
+  "color": "hsl(100, 70%, 50%)",
   "children": [
     {
       "name": "viz",
-      "color": "hsl(331, 70%, 50%)",
+      "color": "hsl(235, 70%, 50%)",
       "children": [
         {
           "name": "stack",
-          "color": "hsl(247, 70%, 50%)",
+          "color": "hsl(37, 70%, 50%)",
           "children": [
             {
               "name": "chart",
-              "color": "hsl(298, 70%, 50%)",
-              "loc": 152187
+              "color": "hsl(148, 70%, 50%)",
+              "loc": 29205
             },
             {
               "name": "xAxis",
-              "color": "hsl(355, 70%, 50%)",
-              "loc": 46111
+              "color": "hsl(56, 70%, 50%)",
+              "loc": 78583
             },
             {
               "name": "yAxis",
-              "color": "hsl(258, 70%, 50%)",
-              "loc": 67801
+              "color": "hsl(10, 70%, 50%)",
+              "loc": 146696
             },
             {
               "name": "layers",
-              "color": "hsl(100, 70%, 50%)",
-              "loc": 4312
+              "color": "hsl(333, 70%, 50%)",
+              "loc": 78422
             }
           ]
         },
         {
           "name": "pie",
-          "color": "hsl(22, 70%, 50%)",
+          "color": "hsl(181, 70%, 50%)",
           "children": [
             {
               "name": "chart",
-              "color": "hsl(55, 70%, 50%)",
+              "color": "hsl(222, 70%, 50%)",
               "children": [
                 {
                   "name": "pie",
-                  "color": "hsl(276, 70%, 50%)",
+                  "color": "hsl(139, 70%, 50%)",
                   "children": [
                     {
                       "name": "outline",
-                      "color": "hsl(256, 70%, 50%)",
-                      "loc": 158874
+                      "color": "hsl(192, 70%, 50%)",
+                      "loc": 38609
                     },
                     {
                       "name": "slices",
-                      "color": "hsl(56, 70%, 50%)",
-                      "loc": 102358
+                      "color": "hsl(91, 70%, 50%)",
+                      "loc": 19476
                     },
                     {
                       "name": "bbox",
-                      "color": "hsl(184, 70%, 50%)",
-                      "loc": 128624
+                      "color": "hsl(289, 70%, 50%)",
+                      "loc": 28805
                     }
                   ]
                 },
                 {
                   "name": "donut",
-                  "color": "hsl(60, 70%, 50%)",
-                  "loc": 11148
+                  "color": "hsl(4, 70%, 50%)",
+                  "loc": 63712
                 },
                 {
                   "name": "gauge",
-                  "color": "hsl(292, 70%, 50%)",
-                  "loc": 20186
+                  "color": "hsl(301, 70%, 50%)",
+                  "loc": 20286
                 }
               ]
             },
             {
               "name": "legends",
-              "color": "hsl(8, 70%, 50%)",
-              "loc": 14942
+              "color": "hsl(176, 70%, 50%)",
+              "loc": 167016
             }
           ]
         }
@@ -84,332 +84,332 @@
     },
     {
       "name": "colors",
-      "color": "hsl(234, 70%, 50%)",
+      "color": "hsl(281, 70%, 50%)",
       "children": [
         {
           "name": "rgb",
-          "color": "hsl(313, 70%, 50%)",
-          "loc": 164564
+          "color": "hsl(83, 70%, 50%)",
+          "loc": 81688
         },
         {
           "name": "hsl",
-          "color": "hsl(21, 70%, 50%)",
-          "loc": 11783
+          "color": "hsl(156, 70%, 50%)",
+          "loc": 125956
         }
       ]
     },
     {
       "name": "utils",
-      "color": "hsl(259, 70%, 50%)",
+      "color": "hsl(29, 70%, 50%)",
       "children": [
         {
           "name": "randomize",
-          "color": "hsl(262, 70%, 50%)",
-          "loc": 81371
+          "color": "hsl(190, 70%, 50%)",
+          "loc": 27885
         },
         {
           "name": "resetClock",
-          "color": "hsl(113, 70%, 50%)",
-          "loc": 141618
+          "color": "hsl(353, 70%, 50%)",
+          "loc": 89406
         },
         {
           "name": "noop",
-          "color": "hsl(211, 70%, 50%)",
-          "loc": 91456
+          "color": "hsl(77, 70%, 50%)",
+          "loc": 117740
         },
         {
           "name": "tick",
-          "color": "hsl(156, 70%, 50%)",
-          "loc": 166309
+          "color": "hsl(60, 70%, 50%)",
+          "loc": 63033
         },
         {
           "name": "forceGC",
-          "color": "hsl(188, 70%, 50%)",
-          "loc": 155524
+          "color": "hsl(206, 70%, 50%)",
+          "loc": 141481
         },
         {
           "name": "stackTrace",
-          "color": "hsl(102, 70%, 50%)",
-          "loc": 135210
+          "color": "hsl(260, 70%, 50%)",
+          "loc": 44188
         },
         {
           "name": "dbg",
-          "color": "hsl(134, 70%, 50%)",
-          "loc": 174641
+          "color": "hsl(216, 70%, 50%)",
+          "loc": 115670
         }
       ]
     },
     {
       "name": "generators",
-      "color": "hsl(295, 70%, 50%)",
+      "color": "hsl(288, 70%, 50%)",
       "children": [
         {
           "name": "address",
-          "color": "hsl(335, 70%, 50%)",
-          "loc": 101613
+          "color": "hsl(63, 70%, 50%)",
+          "loc": 126738
         },
         {
           "name": "city",
-          "color": "hsl(351, 70%, 50%)",
-          "loc": 99205
+          "color": "hsl(81, 70%, 50%)",
+          "loc": 53399
         },
         {
           "name": "animal",
-          "color": "hsl(210, 70%, 50%)",
-          "loc": 180632
+          "color": "hsl(178, 70%, 50%)",
+          "loc": 136171
         },
         {
           "name": "movie",
-          "color": "hsl(211, 70%, 50%)",
-          "loc": 73231
+          "color": "hsl(10, 70%, 50%)",
+          "loc": 49230
         },
         {
           "name": "user",
-          "color": "hsl(180, 70%, 50%)",
-          "loc": 42255
+          "color": "hsl(352, 70%, 50%)",
+          "loc": 199790
         }
       ]
     },
     {
       "name": "set",
-      "color": "hsl(143, 70%, 50%)",
+      "color": "hsl(100, 70%, 50%)",
       "children": [
         {
           "name": "clone",
-          "color": "hsl(76, 70%, 50%)",
-          "loc": 71996
+          "color": "hsl(294, 70%, 50%)",
+          "loc": 28278
         },
         {
           "name": "intersect",
-          "color": "hsl(344, 70%, 50%)",
-          "loc": 66744
+          "color": "hsl(336, 70%, 50%)",
+          "loc": 44615
         },
         {
           "name": "merge",
-          "color": "hsl(87, 70%, 50%)",
-          "loc": 49281
+          "color": "hsl(262, 70%, 50%)",
+          "loc": 21568
         },
         {
           "name": "reverse",
-          "color": "hsl(263, 70%, 50%)",
-          "loc": 189097
+          "color": "hsl(9, 70%, 50%)",
+          "loc": 4402
         },
         {
           "name": "toArray",
-          "color": "hsl(243, 70%, 50%)",
-          "loc": 135436
+          "color": "hsl(15, 70%, 50%)",
+          "loc": 34263
         },
         {
           "name": "toObject",
-          "color": "hsl(136, 70%, 50%)",
-          "loc": 52251
+          "color": "hsl(169, 70%, 50%)",
+          "loc": 161067
         },
         {
           "name": "fromCSV",
-          "color": "hsl(172, 70%, 50%)",
-          "loc": 147075
+          "color": "hsl(308, 70%, 50%)",
+          "loc": 86955
         },
         {
           "name": "slice",
-          "color": "hsl(256, 70%, 50%)",
-          "loc": 140745
+          "color": "hsl(230, 70%, 50%)",
+          "loc": 162585
         },
         {
           "name": "append",
-          "color": "hsl(91, 70%, 50%)",
-          "loc": 123026
+          "color": "hsl(259, 70%, 50%)",
+          "loc": 101075
         },
         {
           "name": "prepend",
-          "color": "hsl(348, 70%, 50%)",
-          "loc": 193224
+          "color": "hsl(212, 70%, 50%)",
+          "loc": 116897
         },
         {
           "name": "shuffle",
-          "color": "hsl(180, 70%, 50%)",
-          "loc": 53330
+          "color": "hsl(127, 70%, 50%)",
+          "loc": 86933
         },
         {
           "name": "pick",
-          "color": "hsl(60, 70%, 50%)",
-          "loc": 156091
+          "color": "hsl(356, 70%, 50%)",
+          "loc": 159962
         },
         {
           "name": "plouc",
-          "color": "hsl(305, 70%, 50%)",
-          "loc": 43408
+          "color": "hsl(66, 70%, 50%)",
+          "loc": 167297
         }
       ]
     },
     {
       "name": "text",
-      "color": "hsl(13, 70%, 50%)",
+      "color": "hsl(55, 70%, 50%)",
       "children": [
         {
           "name": "trim",
-          "color": "hsl(223, 70%, 50%)",
-          "loc": 37871
+          "color": "hsl(135, 70%, 50%)",
+          "loc": 2560
         },
         {
           "name": "slugify",
-          "color": "hsl(255, 70%, 50%)",
-          "loc": 116519
+          "color": "hsl(228, 70%, 50%)",
+          "loc": 93865
         },
         {
           "name": "snakeCase",
-          "color": "hsl(349, 70%, 50%)",
-          "loc": 182258
+          "color": "hsl(102, 70%, 50%)",
+          "loc": 26144
         },
         {
           "name": "camelCase",
-          "color": "hsl(95, 70%, 50%)",
-          "loc": 199273
+          "color": "hsl(28, 70%, 50%)",
+          "loc": 5654
         },
         {
           "name": "repeat",
-          "color": "hsl(22, 70%, 50%)",
-          "loc": 47521
+          "color": "hsl(199, 70%, 50%)",
+          "loc": 87131
         },
         {
           "name": "padLeft",
-          "color": "hsl(167, 70%, 50%)",
-          "loc": 36041
+          "color": "hsl(117, 70%, 50%)",
+          "loc": 176961
         },
         {
           "name": "padRight",
-          "color": "hsl(58, 70%, 50%)",
-          "loc": 18371
+          "color": "hsl(25, 70%, 50%)",
+          "loc": 171229
         },
         {
           "name": "sanitize",
-          "color": "hsl(351, 70%, 50%)",
-          "loc": 146865
+          "color": "hsl(115, 70%, 50%)",
+          "loc": 172920
         },
         {
           "name": "ploucify",
-          "color": "hsl(259, 70%, 50%)",
-          "loc": 142683
+          "color": "hsl(164, 70%, 50%)",
+          "loc": 120795
         }
       ]
     },
     {
       "name": "misc",
-      "color": "hsl(150, 70%, 50%)",
+      "color": "hsl(129, 70%, 50%)",
       "children": [
         {
-          "name": "greetings",
-          "color": "hsl(47, 70%, 50%)",
+          "name": "whatever",
+          "color": "hsl(15, 70%, 50%)",
           "children": [
             {
               "name": "hey",
-              "color": "hsl(73, 70%, 50%)",
-              "loc": 123513
+              "color": "hsl(53, 70%, 50%)",
+              "loc": 157112
             },
             {
-              "name": "HOWDY",
+              "name": "WTF",
+              "color": "hsl(147, 70%, 50%)",
+              "loc": 75480
+            },
+            {
+              "name": "lol",
               "color": "hsl(95, 70%, 50%)",
-              "loc": 92029
+              "loc": 168458
             },
             {
-              "name": "aloha",
-              "color": "hsl(310, 70%, 50%)",
-              "loc": 189073
-            },
-            {
-              "name": "AHOY",
-              "color": "hsl(138, 70%, 50%)",
-              "loc": 157262
+              "name": "IMHO",
+              "color": "hsl(343, 70%, 50%)",
+              "loc": 94558
             }
           ]
         },
         {
           "name": "other",
-          "color": "hsl(41, 70%, 50%)",
-          "loc": 132988
+          "color": "hsl(59, 70%, 50%)",
+          "loc": 7322
         },
         {
-          "name": "path",
-          "color": "hsl(277, 70%, 50%)",
+          "name": "crap",
+          "color": "hsl(59, 70%, 50%)",
           "children": [
             {
-              "name": "pathA",
-              "color": "hsl(80, 70%, 50%)",
-              "loc": 151984
+              "name": "crapA",
+              "color": "hsl(47, 70%, 50%)",
+              "loc": 176837
             },
             {
-              "name": "pathB",
-              "color": "hsl(262, 70%, 50%)",
+              "name": "crapB",
+              "color": "hsl(319, 70%, 50%)",
               "children": [
                 {
-                  "name": "pathB1",
-                  "color": "hsl(13, 70%, 50%)",
-                  "loc": 165228
+                  "name": "crapB1",
+                  "color": "hsl(126, 70%, 50%)",
+                  "loc": 143764
                 },
                 {
-                  "name": "pathB2",
-                  "color": "hsl(49, 70%, 50%)",
-                  "loc": 10261
+                  "name": "crapB2",
+                  "color": "hsl(25, 70%, 50%)",
+                  "loc": 165966
                 },
                 {
-                  "name": "pathB3",
-                  "color": "hsl(309, 70%, 50%)",
-                  "loc": 138009
+                  "name": "crapB3",
+                  "color": "hsl(265, 70%, 50%)",
+                  "loc": 88898
                 },
                 {
-                  "name": "pathB4",
-                  "color": "hsl(152, 70%, 50%)",
-                  "loc": 12959
+                  "name": "crapB4",
+                  "color": "hsl(88, 70%, 50%)",
+                  "loc": 11579
                 }
               ]
             },
             {
-              "name": "pathC",
-              "color": "hsl(165, 70%, 50%)",
+              "name": "crapC",
+              "color": "hsl(251, 70%, 50%)",
               "children": [
                 {
-                  "name": "pathC1",
-                  "color": "hsl(77, 70%, 50%)",
-                  "loc": 42616
+                  "name": "crapC1",
+                  "color": "hsl(270, 70%, 50%)",
+                  "loc": 97114
                 },
                 {
-                  "name": "pathC2",
-                  "color": "hsl(342, 70%, 50%)",
-                  "loc": 45340
+                  "name": "crapC2",
+                  "color": "hsl(60, 70%, 50%)",
+                  "loc": 96437
                 },
                 {
-                  "name": "pathC3",
-                  "color": "hsl(340, 70%, 50%)",
-                  "loc": 145564
+                  "name": "crapC3",
+                  "color": "hsl(256, 70%, 50%)",
+                  "loc": 47350
                 },
                 {
-                  "name": "pathC4",
-                  "color": "hsl(73, 70%, 50%)",
-                  "loc": 169315
+                  "name": "crapC4",
+                  "color": "hsl(203, 70%, 50%)",
+                  "loc": 104726
                 },
                 {
-                  "name": "pathC5",
-                  "color": "hsl(5, 70%, 50%)",
-                  "loc": 109700
+                  "name": "crapC5",
+                  "color": "hsl(42, 70%, 50%)",
+                  "loc": 80874
                 },
                 {
-                  "name": "pathC6",
-                  "color": "hsl(273, 70%, 50%)",
-                  "loc": 188440
+                  "name": "crapC6",
+                  "color": "hsl(254, 70%, 50%)",
+                  "loc": 38544
                 },
                 {
-                  "name": "pathC7",
-                  "color": "hsl(302, 70%, 50%)",
-                  "loc": 127479
+                  "name": "crapC7",
+                  "color": "hsl(270, 70%, 50%)",
+                  "loc": 312
                 },
                 {
-                  "name": "pathC8",
-                  "color": "hsl(323, 70%, 50%)",
-                  "loc": 160537
+                  "name": "crapC8",
+                  "color": "hsl(134, 70%, 50%)",
+                  "loc": 76115
                 },
                 {
-                  "name": "pathC9",
-                  "color": "hsl(143, 70%, 50%)",
-                  "loc": 110703
+                  "name": "crapC9",
+                  "color": "hsl(175, 70%, 50%)",
+                  "loc": 186583
                 }
               ]
             }

@@ -216,5 +216,13 @@ main {
   height: 100%;
   z-index: 10000;
   float: right;
-  border: 5px solid red;
+}
+
+.sunburst{
+  width: 66%;
+  height: 100%;
+  border: 1px solid red;
+  float: right;
+  display: flex;
+  justify-content: center;
 }
