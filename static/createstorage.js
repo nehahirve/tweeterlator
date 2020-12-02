@@ -5,7 +5,7 @@ function saveTweets() {
   let data
   if (fs.existsSync(`database.json`)) {
     data = JSON.parse(fs.readFileSync(`database.json`))
-  } else data = { lastFetched: Date.now(), fetchCount: 0, cities: {} }
+  } else data = { fetchCount: 0, cities: {} }
   for (let city of cities) {
     let cityData = data.cities[city.name] || {}
     for (let i = 0; i < 100; i++) {
