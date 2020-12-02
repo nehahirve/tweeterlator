@@ -65,11 +65,14 @@ main {
   position: absolute;
   height: 100%;
   width: 100%;
-  // border: 1px solid limegreen;
+  border: 1px solid limegreen;
   div {
     display: flex;
     align-items: center;
   }
+}
+
+.heatmap {
 }
 
 .sentiment-gradient {
@@ -206,4 +209,12 @@ main {
   &:focus {
     outline: none;
   }
+}
+
+.heatmap {
+  width: 66%;
+  height: 100%;
+  z-index: 10000;
+  float: right;
+  border: 5px solid red;
 }
