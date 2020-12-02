@@ -28,7 +28,9 @@ async function getPagesOfTweets(startMaxId, city, pages) {
   maxId = startMaxId
   for (let i = 0; i < pages; i++) {
     url = `https://api.twitter.com/1.1/search/tweets.json?q=geocode:${city.lat},${city.lon},${radius}km AND -filter:retweets AND -filter:replies&count=100&max_id=${maxId}&tweet_mode=extended`
-    await get100Tweets(url, options, city.name, i + 1)
+    if ((await get100Tweets(url, options, city.name, i + 1)) === null) {
+      return
+    }
   }
 }
 
@@ -37,14 +39,12 @@ async function get100Tweets(url, options, cityName, fileNumber) {
   const data = await response.json()
   maxId = await getMaxID(data)
   // reset MaxID
-  if (maxId) {
+  if (maxId !== undefined) {
     fs.writeFileSync(
       `JSONDATA/${cityName}_${fileNumber}.json`,
       JSON.stringify(data)
     )
-  } else {
-    return
-  }
+  } else return null
 }
 
 // HELPER FUNCTIIONS
