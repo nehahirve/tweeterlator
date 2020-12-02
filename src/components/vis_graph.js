@@ -139,7 +139,7 @@ export default class VisGraph extends React.Component {
 
       clickToUse: true,
       nodes: {
-        hidden: this.props.isOpen ? false : true,
+        hidden: this.props.graph || !this.props.isOpen ? true : false,
         borderWidth: 0,
         borderWidthSelected: 0,
         chosen: {

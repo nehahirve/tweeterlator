@@ -5,6 +5,8 @@ import AboutButton from '../components/about_button'
 import AboutText from '../components/about_text'
 import VisGraph from '../components/vis_graph'
 import SentimentGradient from '../components/sentiment_gradient'
+import ToggleableGraph from '../components/toggleable_graph'
+import GraphButton from '../components/graph_button'
 
 export default function Home() {
   const [aboutText, setAboutText] = useState(false)
@@ -13,6 +15,7 @@ export default function Home() {
   const [targetX, setTargetX] = useState(0)
   const [targetY, setTargetY] = useState(0)
   const [hasInitialised, setHasInitialised] = useState(false)
+  const [graph, setGraph] = useState(false)
 
   const stationList = [
     { name: 'Stockholm', pos: { x: 73, y: 67.5 } },
@@ -46,9 +49,15 @@ export default function Home() {
     setGraphVisible(true)
   }
 
+  function toggleGraph() {
+    setGraph(!graph)
+    console.log(graph)
+  }
+
   return (
     <>
       <nav>
+        <GraphButton onClick={toggleGraph} isOpen={!aboutText} />
         <AboutButton onClick={toggleAboutText} isOpen={aboutText} />
       </nav>
       <main>
@@ -61,13 +70,21 @@ export default function Home() {
           />
         </section>
         <section className="graph-container">
-          <SentimentGradient isOpen={graphVisible}/>
-          <VisGraph
+          <ToggleableGraph
             station={currentStation}
-            coords={{ x: targetX, y: targetY }}
+            visible={graph}
             isOpen={graphVisible}
-            hasInitialised={hasInitialised}
           />
+          <SentimentGradient isOpen={graphVisible} graph={graph} />
+          <section className="graph-container">
+            <VisGraph
+              station={currentStation}
+              coords={{ x: targetX, y: targetY }}
+              isOpen={graphVisible}
+              hasInitialised={hasInitialised}
+              graph={graph}
+            />
+          </section>
         </section>
       </main>
       <section className="aboutText">

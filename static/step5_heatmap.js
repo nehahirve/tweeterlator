@@ -31,7 +31,6 @@ function getTimes(cityName, cityObject) {
 }
 
 let clock = createClock(database.cities)
-// console.log(Object.entries(clock).map(entry => entry[1]))
 
 let maxValue = getMaxValue(Object.entries(clock).map(entry => entry[1]))
 
@@ -46,7 +45,8 @@ for (let city of cityNames) {
 function getMaxValue(array) {
   let compare = []
   for (let item of array) {
-    compare.push(item.sort((a, b) => b - a)[0])
+    let sorted = [...item]
+    compare.push(sorted.sort((a, b) => b - a)[0])
   }
   return compare.sort((a, b) => b - a)[0]
 }
@@ -62,22 +62,20 @@ function colourMap(input, inputEnd) {
 
 fs.writeFileSync('clock.json', JSON.stringify(clock))
 
+console.log(clock)
+
 createSunburst(clock)
 
 function createSunburst(clock) {
-  let data = {
-    name: 'sunburst',
-    color: '#ffffff',
-    children: [],
-  }
+  let data = { children: [] }
 
   let labels = cityNames.map(city => city.name)
 
   function pushBase(label) {
     for (let i = 0; i < 24; i++) {
       data.children.push({
-        name: `${label}_${i}`,
-        color: color,
+        title: `${label}_${i}`,
+        color: `rgba(87, 206, 228, ${clock[label][i] / 100})`,
         children: [],
       })
     }
@@ -93,12 +91,15 @@ function createSunburst(clock) {
 
   function pushKiruna(base, label) {
     for (let child of base) {
+      console.log(clock[label][base.indexOf(child)])
       child.children[0].children[0].children[0].children[0].children[0].children.push(
         {
-          name: `${label}_${base.indexOf(child)}`,
-          color: color,
+          title: `${label}_${base.indexOf(child)}`,
+          color: `rgba(87, 206, 228, ${
+            clock[label][base.indexOf(child)] / 100
+          })`,
           children: [],
-          loc: 10,
+          size: 10,
         }
       )
     }
@@ -107,8 +108,8 @@ function createSunburst(clock) {
   function pushKarlstad(base, label) {
     for (let child of base) {
       child.children[0].children[0].children[0].children[0].children.push({
-        name: `${label}_${base.indexOf(child)}`,
-        color: color,
+        title: `${label}_${base.indexOf(child)}`,
+        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
         children: [],
       })
     }
@@ -117,8 +118,9 @@ function createSunburst(clock) {
   function pushGothenburg(base, label) {
     for (let child of base) {
       child.children[0].children[0].children[0].children.push({
-        name: `${label}_${base.indexOf(child)}`,
-        color: color,
+        title: `${label}_${base.indexOf(child)}`,
+        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
+
         children: [],
       })
     }
@@ -127,8 +129,8 @@ function createSunburst(clock) {
   function pushSundsvall(base, label) {
     for (let child of base) {
       child.children[0].children[0].children.push({
-        name: `${label}_${base.indexOf(child)}`,
-        color: color,
+        title: `${label}_${base.indexOf(child)}`,
+        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
         children: [],
       })
     }
@@ -137,8 +139,8 @@ function createSunburst(clock) {
   function pushUmea(base, label) {
     for (let child of base) {
       child.children[0].children.push({
-        name: `${label}_${base.indexOf(child)}`,
-        color: color,
+        title: `${label}_${base.indexOf(child)}`,
+        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
         children: [],
       })
     }
@@ -148,8 +150,8 @@ function createSunburst(clock) {
     for (let child of base) {
       // console.log(child)
       child.children.push({
-        name: `${label}_${base.indexOf(child)}`,
-        color: color,
+        title: `${label}_${base.indexOf(child)}`,
+        color: `rgba(87, 206, 228, ${clock[label][base.indexOf(child)] / 100})`,
         children: [],
       })
     }
