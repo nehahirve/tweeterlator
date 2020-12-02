@@ -139,7 +139,7 @@ export default class VisGraph extends React.Component {
 
       clickToUse: true,
       nodes: {
-        hidden: this.props.isOpen ? false : true,
+        hidden: this.props.graph || !this.props.isOpen ? true : false,
         borderWidth: 0,
         borderWidthSelected: 0,
         chosen: {
@@ -174,11 +174,18 @@ export default class VisGraph extends React.Component {
         },
       },
       layout: {
-        randomSeed: 13141231,
+        randomSeed: 1314231,
       },
       physics: {
         enabled: true,
         solver: 'repulsion',
+        repulsion: {
+          centralGravity: 0.01,
+          springLength: 300,
+          springConstant: 0.001,
+          nodeDistance: 100,
+          damping: 0.05,
+        },
       },
       interaction: {
         dragView: true,

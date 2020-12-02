@@ -7,13 +7,12 @@ export default function AboutText(props) {
         <div className="about-text-border">
           <div className="about-text">
             <p>
-            TweeterLator is an app that fetches tweets from
-              users in various cities around Sweden, and visualizes their
-              content based on word frequency analysis, sentiment analysis, and
-              Markov chains.
+              TweeterLator is an app that fetches tweets from users in various
+              cities around Sweden, and visualizes their content based on word
+              frequency analysis, sentiment analysis, and Markov chains.
             </p>
             <p>
-            TweeterLator was born during a brainstorming session for a school
+              TweeterLator was born during a brainstorming session for a school
               project at{' '}
               <a href="https://www.hyperisland.com/" target="_blank">
                 Hyper Island

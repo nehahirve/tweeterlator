@@ -92,7 +92,7 @@ function generateGraph(city) {
     return topWords
   }
 
-  const topWords = createDictionaryofTopWords(5)
+  const topWords = createDictionaryofTopWords(10)
 
   const newNodes = []
 
