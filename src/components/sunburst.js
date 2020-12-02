@@ -1,17 +1,11 @@
 import React from 'react'
-import { Sunburst } from '@nivo/sunburst'
-import testData from '../../static/test.json'
+import { ResponsiveSunburst } from '@nivo/sunburst'
+import testData from '../../static/data_sunburst.json'
 
 export default function SunburstGraph() {
   return (
-    <Sunburst
+    <ResponsiveSunburst
       data={testData}
-      margin={{
-        top: 40,
-        right: 20,
-        bottom: 20,
-        left: 20,
-      }}
       height={500}
       width={500}
       identity="name"
@@ -26,5 +20,4 @@ export default function SunburstGraph() {
       isInteractive={true}
     />
   )
-};
-
+}
