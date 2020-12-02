@@ -7,15 +7,13 @@ import SentimentGradient from '../components/sentiment_gradient'
 export default function ToggleableGraph(props) {
   if (props.visible && props.isOpen) {
     return (
-      <section className="graph-container">
-        <div className="sunburst">
-          <SunburstGraph
-            station={props.station}
-            key={props.id}
-            update={props.update}
-          />
-        </div>
-      </section>
+      <div className="sunburst">
+        <SunburstGraph
+          station={props.station}
+          key={props.id}
+          update={props.update}
+        />
+      </div>
     )
   } else {
     return null
