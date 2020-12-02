@@ -19,13 +19,16 @@ function createClock(database) {
 
 function getTimes(cityName, cityObject) {
   let hoursArray = new Array(24).fill(0)
-
+  let total = 0
   for (let [key, value] of Object.entries(cityObject)) {
     const hour = +value.time.slice(11, 13)
     hoursArray[hour]++
+    console.log(hoursArray[hour])
+    total += hoursArray[hour]
   }
+  // console.log(total)
   hoursArray = hoursArray.map(hour => {
-    return Math.round(hour / fetchCount)
+    return hour / total
   })
   return hoursArray
 }
@@ -34,13 +37,15 @@ let clock = createClock(database.cities)
 
 let maxValue = getMaxValue(Object.entries(clock).map(entry => entry[1]))
 
-console.log(Object.entries(clock))
+// console.log(Object.entries(clock))
 
 for (let city of cityNames) {
   clock[city.name] = clock[city.name].map(number => {
     return colourMap(number, maxValue)
   })
 }
+
+console.log(clock)
 
 function getMaxValue(array) {
   let compare = []
@@ -53,7 +58,7 @@ function getMaxValue(array) {
 
 function colourMap(input, inputEnd) {
   const outputStart = 0
-  const outputEnd = 100
+  const outputEnd = 1
   const inputStart = 0
   // const inputEnd = 500
   const slope = (outputEnd - outputStart) / (inputEnd - inputStart)
@@ -62,7 +67,7 @@ function colourMap(input, inputEnd) {
 
 fs.writeFileSync('clock.json', JSON.stringify(clock))
 
-console.log(clock)
+// console.log(clock)
 
 createSunburst(clock)
 
@@ -75,7 +80,7 @@ function createSunburst(clock) {
     for (let i = 0; i < 24; i++) {
       data.children.push({
         title: `${label}_${i}`,
-        color: `rgba(0, 0, 0, ${clock[label][i] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][i]})`,
         children: [],
       })
     }
@@ -91,11 +96,10 @@ function createSunburst(clock) {
 
   function pushKiruna(base, label) {
     for (let child of base) {
-      console.log(clock[label][base.indexOf(child)])
       child.children[0].children[0].children[0].children[0].children[0].children.push(
         {
           title: `${label}_${base.indexOf(child)}`,
-          color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
+          color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)]})`,
           children: [],
           size: 10,
         }
@@ -107,7 +111,7 @@ function createSunburst(clock) {
     for (let child of base) {
       child.children[0].children[0].children[0].children[0].children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)]})`,
         children: [],
       })
     }
@@ -117,7 +121,7 @@ function createSunburst(clock) {
     for (let child of base) {
       child.children[0].children[0].children[0].children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)]})`,
 
         children: [],
       })
@@ -128,7 +132,7 @@ function createSunburst(clock) {
     for (let child of base) {
       child.children[0].children[0].children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)]})`,
         children: [],
       })
     }
@@ -138,7 +142,7 @@ function createSunburst(clock) {
     for (let child of base) {
       child.children[0].children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)]})`,
         children: [],
       })
     }
@@ -149,7 +153,7 @@ function createSunburst(clock) {
       // console.log(child)
       child.children.push({
         title: `${label}_${base.indexOf(child)}`,
-        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)] / 100})`,
+        color: `rgba(0, 0, 0, ${clock[label][base.indexOf(child)]})`,
         children: [],
       })
     }

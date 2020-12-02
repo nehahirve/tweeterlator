@@ -2,7 +2,9 @@ import React from 'react'
 import data from '../../static/data_sunburst.json'
 import colors from '../../static/colours.json'
 import clock from '../../static/clock.json'
-import { Sunburst } from 'react-vis'
+import { Hint, Sunburst } from 'react-vis'
+
+const rgb = { r: 239, g: 77, b: 151 }
 
 function updateData() {
   const totalLeaves = 24
@@ -24,62 +26,42 @@ function clone(obj) {
 }
 
 function colourData(city, newData) {
-  console.log(data)
   const totalLeaves = 24
   const leaves = []
   if (city === 'stockholm') {
     for (let child of newData.children) {
-      console.log(child)
       const o = clock['stockholm'][newData.children.indexOf(child)]
-      child.color = `rgba(87, 206, 228, ${o / 100})`
+      child.color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
   } else if (city === 'malmö') {
     for (let child of newData.children) {
       const o = clock['malmö'][newData.children.indexOf(child)]
-      child.children[0].color = `rgba(87, 206, 228, ${o / 100})`
+      child.children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
   } else if (city === 'umeå') {
     for (let child of newData.children) {
-      console.log(child.children[0].children[0].color)
       const o = clock['umeå'][newData.children.indexOf(child)]
-      child.children[0].children[0].color = `rgba(87, 206, 228, ${o / 100})`
+      child.children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
   } else if (city === 'sundsvall') {
     for (let child of newData.children) {
-      console.log(child.children[0].children[0].children[0].color)
       const o = clock['sundsvall'][newData.children.indexOf(child)]
-      child.children[0].children[0].children[0].color = `rgba(87, 206, 228, ${
-        o / 100
-      })`
+      child.children[0].children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
   } else if (city === 'göteborg') {
     for (let child of newData.children) {
-      console.log(child.children[0].children[0].children[0].children[0].color)
       const o = clock['göteborg'][newData.children.indexOf(child)]
-      child.children[0].children[0].children[0].children[0].color = `rgba(87, 206, 228, ${
-        o / 100
-      })`
+      child.children[0].children[0].children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
   } else if (city === 'karlstad') {
     for (let child of newData.children) {
-      console.log(
-        child.children[0].children[0].children[0].children[0].children[0].color
-      )
       const o = clock['karlstad'][newData.children.indexOf(child)]
-      child.children[0].children[0].children[0].children[0].children[0].color = `rgba(87, 206, 228, ${
-        o / 100
-      })`
+      child.children[0].children[0].children[0].children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
   } else if (city === 'kiruna') {
     for (let child of newData.children) {
-      console.log(
-        child.children[0].children[0].children[0].children[0].children[0]
-          .children[0].color
-      )
       const o = clock['kiruna'][newData.children.indexOf(child)]
-      child.children[0].children[0].children[0].children[0].children[0].children[0].color = `rgba(87, 206, 228, ${
-        o / 100
-      })`
+      child.children[0].children[0].children[0].children[0].children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
   }
   for (let i = 0; i < totalLeaves; i++) {
@@ -95,27 +77,45 @@ function colourData(city, newData) {
   }
 }
 
+const tipStyle = {
+  display: 'flex',
+  color: '#fff',
+  background: '#000',
+  alignItems: 'center',
+  padding: '5px',
+}
+const boxStyle = { height: '10px', width: '10px' }
+
+function buildValue(hoveredCell) {
+  const { radius, angle, angle0 } = hoveredCell
+  const truedAngle = (angle + angle0) / 2
+  return {
+    x: radius * Math.cos(truedAngle),
+    y: radius * Math.sin(truedAngle),
+  }
+}
+
 export default class SunburstGraph extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       data: updateData(),
       current: this.props.station,
+      hoveredCell: true,
     }
     this.updateKey = this.updateKey.bind(this)
-    // this.colourData = this.colourData.bind(this)
+    this.hover = this.hover.bind(this)
   }
 
   updateKey() {
     this.props.update()
   }
 
-  componentDidMount() {
-    console.log('mounted')
-    // this.setState({ data: data })
-    console.log(this.props.station.toLowerCase())
-    // colourData(this.props.station.toLowerCase())
+  hover(e) {
+    console.log('hey')
+  }
 
+  componentDidMount() {
     let newData = clone(data)
     this.setState({
       data: colourData(this.props.station.toLowerCase(), newData),
@@ -131,21 +131,34 @@ export default class SunburstGraph extends React.Component {
   }
 
   render() {
+    const { hoveredCell } = this.state
     const { clicked, finalValue, pathValue } = this.state
     return (
       <Sunburst
         hideRootNode
-        // colorType="literal"
         data={this.state.data}
-        height={500}
-        width={500}
-        animation={{ damping: 20, stiffness: 300 }}
+        height={600}
+        width={600}
+        animation={{ damping: 15, stiffness: 300 }}
         style={{
-          stroke: 'black',
+          stroke: colors.white,
           strokeOpacity: 1,
-          strokeWidth: '2',
+          strokeWidth: '3',
         }}
-      />
+        // onValueMouseOver={v =>
+        //   this.setState({ hoveredCell: v.x && v.y ? v : false })
+        // }
+        // onValueMouseOut={v => this.setState({ hoveredCell: false })}
+      >
+        {hoveredCell ? (
+          <Hint value={buildValue(hoveredCell)}>
+            <div style={tipStyle}>
+              <div style={{ ...boxStyle, background: 'red' }} />
+              {hoveredCell.clr}
+            </div>
+          </Hint>
+        ) : null}
+      </Sunburst>
     )
   }
 }
