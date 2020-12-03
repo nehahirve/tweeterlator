@@ -15,7 +15,7 @@ generateGraphForAllCities(cities)
 
 function generateGraph(city) {
   let text = fs
-    .readFileSync(`TEXTDATA2/${city.name}.txt`)
+    .readFileSync(`TEXTDATA/${city.name}.txt`)
     .toString()
     .toLowerCase()
 
