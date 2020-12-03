@@ -7,6 +7,7 @@ import VisGraph from '../components/vis_graph'
 import SentimentGradient from '../components/sentiment_gradient'
 import ToggleableGraph from '../components/toggleable_graph'
 import GraphButton from '../components/graph_button'
+import { Helmet } from 'react-helmet'
 
 export default function Home() {
   const [aboutText, setAboutText] = useState(false)
@@ -63,6 +64,9 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>TweeterLator</title>
+      </Helmet>
       <nav>
         <GraphButton onClick={toggleGraph} isOpen={!aboutText} />
         <AboutButton onClick={toggleAboutText} isOpen={aboutText} />

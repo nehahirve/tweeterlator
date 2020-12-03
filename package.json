@@ -33,6 +33,7 @@
     "react-cytoscapejs": "^1.2.1",
     "react-dom": "^17.0.0",
     "react-graph-vis": "^1.0.5",
+    "react-helmet": "^6.1.0",
     "react-responsive-canvas": "^1.0.2",
     "react-vis": "^1.11.7",
     "react-vis-network-graph": "^3.0.1",
