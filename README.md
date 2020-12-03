@@ -3,9 +3,10 @@
   TweeterLator
 </h1>
 
-<h5 align="center">A <a href="https://www.hyperisland.com/" target="_blank">Hyper Island</a> Student Project</h5>
+<h4 align="center">A <a href="https://www.hyperisland.com/" target="_blank">Hyper Island</a> Student Project</h4>
 
-**About:**
+**About:**  
+
 TweeterLator is an app that fetches tweets from users in various cities around Sweden, and visualizes their content based on word frequency analysis, sentiment analysis, Markov chains, and lastly time series analysis.
 
 TweeterLator was born during a brainstorming session for a school project at Hyper Island. For the three-week-long project, we decided to blend our brief (building a webpage using RESTful APIs) with our interest in data visualization and graphs. Therefore, working with Twitter API and analyzing their users' content seemed like compelling territory to explore.
@@ -31,7 +32,7 @@ Another series of data points we decided to analyze separately was time series. 
 
 - Working with API
 - Building an app with Gatsby
-- Graphing data
+- Data analysis and visualisation
 - Working in Nodejs
 - Thinking in terms of React Components
 - Collaborating with Agile principles
@@ -40,10 +41,8 @@ Another series of data points we decided to analyze separately was time series. 
 
 1. We couldn’t collect data at fetch time, hence we decided to do it at build time once a week through a series of node scripts.
 Our initial intention was to fetch data at runtime, but we eventually learned that Twitter doesn't support CORS and therefore we couldn't access the API from the client. Instead we decided to fetch the data periodically at built-time running a Node script in the backend. Since we moved to backend, we analyzed most of the data in Node as well.
-<br>
 
-2. Initially we spent a few days researching graph visualising libraries, and settled on Cytoscape.js. It proved to be very complicated to work with, especially with the added complexity of finding a good React wrapper, and Vis.js had much clearer documentation, and nice physics simulations out of the package. 
-<br> 
+2. Initially we spent a few days researching graph visualising libraries, and settled on <a href="https://js.cytoscape.org/" target="_blank">Cytoscape.js</a>. It proved to be very complicated to work with, especially with the added complexity of finding a good React wrapper, and Vis.js had much clearer documentation, and nice physics simulations out of the package. 
 
 3. We didn't examine our data closely in the start of the project, and didn't realize that we were getting truncated tweets. This caused a lot of bugs and lost time towards the end of the project.
 
