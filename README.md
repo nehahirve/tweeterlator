@@ -3,7 +3,7 @@
   TweeterLator
 </h1>
 
-<h4 align="center">A <a href="https://www.hyperisland.com/" target="_blank">Hyper Island</a> Student Project</h4>
+<h3>A <a href="https://www.hyperisland.com/" target="_blank">Hyper Island</a> Student Project</h3>
 
 **About:**  
 
