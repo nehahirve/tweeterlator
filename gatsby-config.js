@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `I like Google fonts`,
+    title: `TweeterLator`,
   },
   plugins: [
     {
