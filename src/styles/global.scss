@@ -251,15 +251,19 @@ main {
   z-index: 3998;
 }
 
-.noon,
-.midnight {
-  position: absolute;
+.sunburst-wrapper {
+  display: flex;
+  flex-direction: column;
 }
+// .noon,
+// .midnight {
+//   position: absolute;
+// }
 
-.midnight {
-  top: 14vh;
-}
+// .midnight {
+//   top: 14vh;
+// }
 
-.noon {
-  bottom: 14vh;
-}
+// .noon {
+//   bottom: 14vh;
+// }
