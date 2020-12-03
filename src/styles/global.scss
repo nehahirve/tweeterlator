@@ -250,3 +250,16 @@ main {
 .sunburst-container {
   z-index: 3998;
 }
+
+.noon,
+.midnight {
+  position: absolute;
+}
+
+.midnight {
+  top: 14vh;
+}
+
+.noon {
+  bottom: 14vh;
+}
