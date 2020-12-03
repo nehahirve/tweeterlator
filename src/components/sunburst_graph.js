@@ -102,8 +102,11 @@ export default class SunburstGraph extends React.Component {
       data: updateData(),
       current: this.props.station,
       hoveredCell: false,
+<<<<<<< HEAD
       tooltip: '',
       mouse: { x: 0, y: 0 },
+=======
+>>>>>>> 922cdcf9a9685f17de6fa86c3e390bbbf6a72200
     }
     this.updateKey = this.updateKey.bind(this)
   }
@@ -153,8 +156,8 @@ export default class SunburstGraph extends React.Component {
         {hoveredCell ? (
           <Hint value={buildValue(hoveredCell)}>
             <div style={tipStyle}>
-              <div style={{ ...boxStyle, background: colors.white }} />
-              {this.state.tooltip}
+              <div style={{ ...boxStyle, background: 'red' }} />
+              {'hello'}
             </div>
           </Hint>
         ) : null}
