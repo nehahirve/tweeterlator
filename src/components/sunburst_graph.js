@@ -102,11 +102,8 @@ export default class SunburstGraph extends React.Component {
       data: updateData(),
       current: this.props.station,
       hoveredCell: false,
-<<<<<<< HEAD
       tooltip: '',
       mouse: { x: 0, y: 0 },
-=======
->>>>>>> 922cdcf9a9685f17de6fa86c3e390bbbf6a72200
     }
     this.updateKey = this.updateKey.bind(this)
   }
