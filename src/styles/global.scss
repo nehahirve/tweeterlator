@@ -101,6 +101,7 @@ main {
 }
 
 .about-text-wrapper {
+  z-index: 4999;
   // border: 10px solid green;
   position: absolute;
   display: flex;
