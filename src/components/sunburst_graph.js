@@ -87,11 +87,11 @@ const tipStyle = {
 const boxStyle = { height: '10px', width: '10px' }
 
 function buildValue(hoveredCell) {
-  const { radius, angle, angle0 } = hoveredCell
+  const { radius0, angle, angle0 } = hoveredCell
   const truedAngle = (angle + angle0) / 2
   return {
-    x: radius * Math.cos(truedAngle),
-    y: radius * Math.sin(truedAngle),
+    x: radius0 * Math.sin(truedAngle),
+    y: radius0 * Math.cos(truedAngle),
   }
 }
 
@@ -103,17 +103,13 @@ export default class SunburstGraph extends React.Component {
       current: this.props.station,
       hoveredCell: false,
       tooltip: '',
+      mouse: { x: 0, y: 0 },
     }
     this.updateKey = this.updateKey.bind(this)
-    this.hover = this.hover.bind(this)
   }
 
   updateKey() {
     this.props.update()
-  }
-
-  hover(e) {
-    console.log('hey')
   }
 
   componentDidMount() {
@@ -133,7 +129,6 @@ export default class SunburstGraph extends React.Component {
 
   render() {
     const { hoveredCell } = this.state
-    const { clicked, finalValue, pathValue } = this.state
     return (
       <Sunburst
         hideRootNode
@@ -146,15 +141,17 @@ export default class SunburstGraph extends React.Component {
           strokeOpacity: 1,
           strokeWidth: '3',
         }}
-        onValueMouseOver={v => {
-          this.setState({ hoveredCell: true })
-          this.setState({ tooltip: v.title })
-          console.log(v)
-        }}
-        onValueMouseOut={v => this.setState({ hoveredCell: false })}
+        // onValueMouseOver={(v, e) => {
+        //   this.setState({ mouse: { x: e.event.clientX, y: e.event.clientY } })
+        //   this.setState({ tooltip: v.title })
+        //   this.setState({ hoveredCell: v })
+
+        //   console.log(e.event.clientX)
+        // }}
+        // onValueMouseOut={v => this.setState({ hoveredCell: false })}
       >
         {hoveredCell ? (
-          <Hint value={{ x: 5, y: 0 }}>
+          <Hint value={buildValue(hoveredCell)}>
             <div style={tipStyle}>
               <div style={{ ...boxStyle, background: colors.white }} />
               {this.state.tooltip}
