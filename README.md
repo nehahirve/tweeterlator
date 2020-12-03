@@ -23,7 +23,9 @@ Second, we used a Markov Chain analysis to map frequently occurring bigrams (aft
 
 We also ran a simple sentiment analysis script using an AFINN score that we mapped onto a colour gradient in order to colour the graph. 
 
-Another series of data points we decided to analyze separately was time series. Although, bear in mind that we have <a href="https://en.wikipedia.org/wiki/Database_normalization" target="_blank"> normalized the data</a> and structured it in accordance to our goal. The time data has been scaled by the sum of each row before being visualized in the radial heatmap.
+Another series of data points we decided to visualise separately was the tweet timestamp. We have <a href="https://en.wikipedia.org/wiki/Database_normalization" target="_blank"> normalized the data</a> and structured it in accordance to our goal. The time data has been scaled by the sum of each row before being visualized in the radial heatmap. 
+
+We ended up adding a rudimentary database layer (a JSON file). This way, each of our fetch calls could add to our database and we could have more control over how we interfaced with our own database. This was especially helpful when it comes to maintaining the site, as we plan to do random sampling of time data (right now, since our sample size is relatively small, we see a big difference in recent tweets from Stockholm and a smaller city like Kiruna.
 
 *Exploring some of the libraries for the purpose of analyzing text-based content in this project was to experiment with new tools in the field of front-end development. Please note that we are front-end developers, not data analysts (although with some background knowledge of linguistics), and it’s likely that we have overlooked some of the nuances of data collection and potential biases.*
 
