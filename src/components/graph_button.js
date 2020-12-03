@@ -5,7 +5,7 @@ export default function GraphButton(props) {
     return (
       <>
         <button className="graph-button" onClick={props.onClick}>
-          Toggle
+          Toggle Graph
         </button>
       </>
     )

@@ -15,14 +15,14 @@ generateGraphForAllCities(cities)
 
 function generateGraph(city) {
   let text = fs
-    .readFileSync(`TEXTDATA/${city.name}.txt`)
+    .readFileSync(`TEXTDATA2/${city.name}.txt`)
     .toString()
     .toLowerCase()
 
   // removing characters
   let characterArray = text.split('')
 
-  const badChars = ['…', '(', ')', ',', '*']
+  const badChars = ['…', '(', ')', ',', '*', ';']
   let stripped = characterArray.map(char => {
     if (badChars.includes(char)) {
       return ''
@@ -92,7 +92,7 @@ function generateGraph(city) {
     return topWords
   }
 
-  const topWords = createDictionaryofTopWords(10)
+  const topWords = createDictionaryofTopWords(7)
 
   const newNodes = []
 
