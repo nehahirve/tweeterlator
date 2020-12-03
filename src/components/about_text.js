@@ -9,7 +9,7 @@ export default function AboutText(props) {
             <p>
               TweeterLator is an app that fetches tweets from users in various
               cities around Sweden, and visualizes their content based on word
-              frequency analysis, sentiment analysis, and Markov chains.
+              frequency analysis, sentiment analysis, Markov chains, and lastly time series analysis.
             </p>
             <p>
               TweeterLator was born during a brainstorming session for a school
