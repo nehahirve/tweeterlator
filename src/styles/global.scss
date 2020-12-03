@@ -71,6 +71,9 @@ main {
   }
 }
 
+.heatmap {
+}
+
 .sentiment-gradient {
   position: absolute;
   right: 1rem;
@@ -246,22 +249,4 @@ main {
 
 .sunburst-container {
   z-index: 3998;
-}
-.sunburst-wrapper{
-  height: 550px;
-  width: 550px;
-  display: flex;
-  place-content: center;
-  position: relative;
-}
-.sunburst-wrapper span{
-  position: absolute;
-}
-.noon{
-  top: 5px;
-	left: calc(50% - 28px);
-}
-.midnight{
-  bottom: 5px;
-	left: calc(50% - 38px);
 }

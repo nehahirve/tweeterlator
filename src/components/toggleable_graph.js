@@ -8,15 +8,11 @@ export default function ToggleableGraph(props) {
   if (props.visible && props.isOpen) {
     return (
       <div className="sunburst">
-        <div className="sunburst-wrapper">
-          <span className="noon">Midday</span>
-          <span className="midnight">Midnight</span>
-          <SunburstGraph
-            station={props.station}
-            key={props.id}
-            update={props.update}
-          />
-        </div>
+        <SunburstGraph
+          station={props.station}
+          key={props.id}
+          update={props.update}
+        />
       </div>
     )
   } else {
