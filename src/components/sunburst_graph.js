@@ -144,7 +144,11 @@ export default class SunburstGraph extends React.Component {
         style={{
           stroke: 'black',
           strokeOpacity: 1,
+<<<<<<< HEAD
           strokeWidth: '2',
+=======
+          strokeWidth: '3',
+>>>>>>> parent of 5e5aca0... tooltip up
         }}
         onValueMouseOver={v => console.log(v)}
         onValueMouseOut={v => this.setState({ hoveredCell: false })}
