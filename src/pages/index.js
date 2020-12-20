@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 // import Header from "../components/header"
-import Map from '../components/map'
-import AboutButton from '../components/about_button'
-import AboutText from '../components/about_text'
-import VisGraph from '../components/vis_graph'
-import SentimentGradient from '../components/sentiment_gradient'
-import ToggleableGraph from '../components/toggleable_graph'
-import GraphButton from '../components/graph_button'
-import { Helmet } from 'react-helmet'
+import Map from "../components/map"
+import AboutButton from "../components/about_button"
+import AboutText from "../components/about_text"
+import VisGraph from "../components/vis_graph"
+import SentimentGradient from "../components/sentiment_gradient"
+import ToggleableGraph from "../components/toggleable_graph"
+import GraphButton from "../components/graph_button"
+import { Helmet } from "react-helmet"
 
 export default function Home() {
   const [aboutText, setAboutText] = useState(false)
   const [graphVisible, setGraphVisible] = useState(true)
-  const [currentStation, setCurrentStation] = useState('Stockholm')
+  const [currentStation, setCurrentStation] = useState("Stockholm")
   const [targetX, setTargetX] = useState(0)
   const [targetY, setTargetY] = useState(0)
   const [hasInitialised, setHasInitialised] = useState(false)
   const [graph, setGraph] = useState(false)
-  const [id, setId] = useState('1')
+  const [id, setId] = useState("1")
 
   function update() {
-    console.log('updated')
+    console.log("updated")
     setId(Math.random().toString())
   }
 
   const stationList = [
-    { name: 'Stockholm', pos: { x: 73, y: 67.5 } },
-    { name: 'Karlstad', pos: { x: 11, y: 67 } },
-    { name: 'Malmö', pos: { x: 18, y: 94 } },
-    { name: 'Göteborg', pos: { x: -7, y: 79.5 } },
-    { name: 'Sundsvall', pos: { x: 73, y: 44.5 } },
-    { name: 'Umeå', pos: { x: 85, y: 35 } },
-    { name: 'Kiruna', pos: { x: 81, y: 8 } },
+    { name: "Stockholm", pos: { x: 73, y: 67.5 } },
+    { name: "Karlstad", pos: { x: 11, y: 67 } },
+    { name: "Malmö", pos: { x: 18, y: 94 } },
+    { name: "Göteborg", pos: { x: -7, y: 79.5 } },
+    { name: "Sundsvall", pos: { x: 73, y: 44.5 } },
+    { name: "Umeå", pos: { x: 85, y: 35 } },
+    { name: "Kiruna", pos: { x: 81, y: 8 } },
   ]
 
   function toggleAboutText() {

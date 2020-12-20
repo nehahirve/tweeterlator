@@ -1,7 +1,7 @@
 {
   "name": "tweeterlator",
   "private": true,
-  "description": "A data visualisation project using the Twitter API",
+  "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
@@ -14,39 +14,18 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@nivo/core": "^0.65.0",
-    "@nivo/network": "^0.65.1",
-    "@nivo/sunburst": "^0.67.0",
-    "character-remover": "^1.0.2",
-    "cytoscape": "^3.17.0",
-    "cytoscape-fcose": "^1.2.3",
-    "d3-force": "^2.1.1",
-    "ez-markov": "^1.2.1",
-    "fontsource-ibm-plex-mono": "^3.0.9",
-    "gatsby": "^2.25.3",
+    "gatsby": "^2.26.1",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^3.7.0",
-    "moxy-ta": "^1.0.2",
-    "node-fetch": "^2.6.1",
-    "react": "^17.0.0",
-    "react-canvas": "^1.2.1",
-    "react-canvas-wrapper": "^0.5.2",
-    "react-cytoscapejs": "^1.2.1",
-    "react-dom": "^17.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-graph-vis": "^1.0.5",
     "react-helmet": "^6.1.0",
     "react-responsive-canvas": "^1.0.2",
-    "react-vis": "^1.11.7",
-    "react-vis-network-graph": "^3.0.1",
-    "sentiment": "^5.0.2",
-    "sentiment-swedish": "^1.1.0",
-    "stopword": "^1.0.3",
-    "stripchar": "^1.2.1",
-    "text-cleaner": "^1.2.1",
-    "vis-network": "^8.5.4"
+    "react-vis": "^1.11.7"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"
+    "prettier": "2.2.1"
   },
   "repository": {
     "type": "git",

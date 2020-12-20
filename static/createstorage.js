@@ -1,5 +1,5 @@
 const fs = require('fs')
-const cities = require('./seed.json')
+const cities = require('./static/seed.json')
 
 function saveTweets() {
   let data
