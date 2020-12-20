@@ -1,8 +1,8 @@
-import React from 'react'
-import data from '../../static/data_sunburst.json'
-import colors from '../../static/colours.json'
-import clock from '../../static/clock.json'
-import { Hint, Sunburst } from 'react-vis'
+import React from "react"
+import data from "../../static/data_sunburst.json"
+import colors from "../../static/colours.json"
+import clock from "../../static/clock.json"
+import { Hint, Sunburst } from "react-vis"
 
 const rgb = { r: 239, g: 77, b: 151 }
 
@@ -15,7 +15,7 @@ function updateData() {
     leaves.push(leaf)
   }
   return {
-    title: '',
+    title: "",
     color: 1,
     children: leaves,
   }
@@ -28,39 +28,39 @@ function clone(obj) {
 function colourData(city, newData) {
   const totalLeaves = 24
   const leaves = []
-  if (city === 'stockholm') {
+  if (city === "stockholm") {
     for (let child of newData.children) {
-      const o = clock['stockholm'][newData.children.indexOf(child)]
+      const o = clock["stockholm"][newData.children.indexOf(child)]
       child.color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
-  } else if (city === 'malmö') {
+  } else if (city === "malmö") {
     for (let child of newData.children) {
-      const o = clock['malmö'][newData.children.indexOf(child)]
+      const o = clock["malmö"][newData.children.indexOf(child)]
       child.children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
-  } else if (city === 'umeå') {
+  } else if (city === "umeå") {
     for (let child of newData.children) {
-      const o = clock['umeå'][newData.children.indexOf(child)]
+      const o = clock["umeå"][newData.children.indexOf(child)]
       child.children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
-  } else if (city === 'sundsvall') {
+  } else if (city === "sundsvall") {
     for (let child of newData.children) {
-      const o = clock['sundsvall'][newData.children.indexOf(child)]
+      const o = clock["sundsvall"][newData.children.indexOf(child)]
       child.children[0].children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
-  } else if (city === 'göteborg') {
+  } else if (city === "göteborg") {
     for (let child of newData.children) {
-      const o = clock['göteborg'][newData.children.indexOf(child)]
+      const o = clock["göteborg"][newData.children.indexOf(child)]
       child.children[0].children[0].children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
-  } else if (city === 'karlstad') {
+  } else if (city === "karlstad") {
     for (let child of newData.children) {
-      const o = clock['karlstad'][newData.children.indexOf(child)]
+      const o = clock["karlstad"][newData.children.indexOf(child)]
       child.children[0].children[0].children[0].children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
-  } else if (city === 'kiruna') {
+  } else if (city === "kiruna") {
     for (let child of newData.children) {
-      const o = clock['kiruna'][newData.children.indexOf(child)]
+      const o = clock["kiruna"][newData.children.indexOf(child)]
       child.children[0].children[0].children[0].children[0].children[0].children[0].color = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`
     }
   }
@@ -71,20 +71,20 @@ function colourData(city, newData) {
     leaves.push(leaf)
   }
   return {
-    title: '',
+    title: "",
     color: 1,
     children: leaves,
   }
 }
 
 const tipStyle = {
-  display: 'flex',
-  color: '#fff',
-  background: '#000',
-  alignItems: 'center',
-  padding: '5px',
+  display: "flex",
+  color: "#fff",
+  background: "#000",
+  alignItems: "center",
+  padding: "5px",
 }
-const boxStyle = { height: '10px', width: '10px' }
+const boxStyle = { height: "10px", width: "10px" }
 
 function buildValue(hoveredCell) {
   const { radius0, angle, angle0 } = hoveredCell
@@ -102,7 +102,7 @@ export default class SunburstGraph extends React.Component {
       data: updateData(),
       current: this.props.station,
       hoveredCell: false,
-      tooltip: '',
+      tooltip: "",
       mouse: { x: 0, y: 0 },
     }
     this.updateKey = this.updateKey.bind(this)
@@ -139,7 +139,7 @@ export default class SunburstGraph extends React.Component {
         style={{
           stroke: colors.white,
           strokeOpacity: 1,
-          strokeWidth: '3',
+          strokeWidth: "3",
         }}
         // onValueMouseOver={(v, e) => {
         //   this.setState({ mouse: { x: e.event.clientX, y: e.event.clientY } })
@@ -153,8 +153,8 @@ export default class SunburstGraph extends React.Component {
         {hoveredCell ? (
           <Hint value={buildValue(hoveredCell)}>
             <div style={tipStyle}>
-              <div style={{ ...boxStyle, background: 'red' }} />
-              {'hello'}
+              <div style={{ ...boxStyle, background: "red" }} />
+              {"hello"}
             </div>
           </Hint>
         ) : null}
