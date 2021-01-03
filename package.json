@@ -19,10 +19,10 @@
     "gatsby-plugin-react-helmet": "^3.7.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-graph-vis": "^1.0.5",
     "react-helmet": "^6.1.0",
     "react-responsive-canvas": "^1.0.2",
-    "react-vis": "^1.11.7"
+    "react-vis": "^1.11.7",
+    "react-vis-network-graph": "^3.0.1"
   },
   "devDependencies": {
     "prettier": "2.2.1"

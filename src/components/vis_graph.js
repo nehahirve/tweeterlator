@@ -1,5 +1,5 @@
 import React from 'react'
-import Graph from 'react-graph-vis'
+import Graph from 'react-vis-network-graph'
 import data from '../../static/data_vis.json'
 import sentimentData from '../../static/data_sentiment.json'
 //import 'react-vis/dist/style.css'
